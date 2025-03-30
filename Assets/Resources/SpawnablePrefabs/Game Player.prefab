@@ -59,9 +59,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 972413898931645442}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a161f6a1e3e1084e99e500ff2e1a27f, type: 3}
+  m_Script: {fileID: 11500000, guid: 15126d5fc11023040a0f8793e159aa66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
+  MyPlayerPiece: {fileID: 4999794094966535909, guid: 002e075903c842a42985d16c3cba6dbf,
+    type: 3}

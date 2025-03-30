@@ -12,9 +12,9 @@ public class MyNetworkManager : NetworkManager
    [SerializeField] int minPlayers = 1;
    [SerializeField] string menuScene, gameScene;
    [Header("Room")]
-   [SerializeField] NetworkRoomPlayerLobby roomPlayerPrefab;
+   [SerializeField] RoomPlayer roomPlayerPrefab;
    [Header("Game")]
-   [SerializeField] NetworkGamePlayerLobby gamePlayerPrefab;
+   [SerializeField] GamePlayer gamePlayerPrefab;
    [SerializeField] GameObject playerSpawnSystem;
    [SerializeField] GameObject roundSystem;
 
@@ -23,8 +23,8 @@ public class MyNetworkManager : NetworkManager
    public static Action<NetworkConnectionToClient> OnServerReadied;
    public static Action OnServerStopped;
 
-   public List<NetworkRoomPlayerLobby> RoomPlayers { get; } = new List<NetworkRoomPlayerLobby>();
-   public List<NetworkGamePlayerLobby> GamePlayers { get; } = new List<NetworkGamePlayerLobby>();
+   public List<RoomPlayer> RoomPlayers { get; } = new List<RoomPlayer>();
+   public List<GamePlayer> GamePlayers { get; } = new List<GamePlayer>();
 
    #endregion
 
@@ -81,7 +81,7 @@ public class MyNetworkManager : NetworkManager
       {
          bool isLeader = RoomPlayers.Count == 0;
 
-         NetworkRoomPlayerLobby roomPlayerInstance = Instantiate(roomPlayerPrefab);
+         RoomPlayer roomPlayerInstance = Instantiate(roomPlayerPrefab);
 
          roomPlayerInstance.IsLeader = isLeader;
 
@@ -93,7 +93,7 @@ public class MyNetworkManager : NetworkManager
    {
       if (conn.identity != null)
       {
-         var player = conn.identity.GetComponent<NetworkRoomPlayerLobby>();
+         var player = conn.identity.GetComponent<RoomPlayer>();
          RoomPlayers.Remove(player);
          NotifyPlayersOfReadyState();
       }
@@ -136,8 +136,8 @@ public class MyNetworkManager : NetworkManager
          GameObject playerSpawnSystemInstance = Instantiate(playerSpawnSystem);
          NetworkServer.Spawn(playerSpawnSystemInstance);
 
-         GameObject roundSystemInstance = Instantiate(roundSystem);
-         NetworkServer.Spawn(roundSystemInstance);
+         //GameObject roundSystemInstance = Instantiate(roundSystem);
+         //NetworkServer.Spawn(roundSystemInstance);
       }
    }
 
