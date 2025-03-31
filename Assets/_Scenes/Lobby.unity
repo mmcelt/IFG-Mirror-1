@@ -585,7 +585,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 8579175371120742134, guid: d1840214d87b7f0458d40c91c9cbce27,
     type: 3}
   autoCreatePlayer: 1
-  playerSpawnMethod: 0
+  playerSpawnMethod: 1
   spawnPrefabs: []
   exceptionsDisconnect: 1
   snapshotSettings:
@@ -684,6 +684,12 @@ PrefabInstance:
       propertyPath: networkManager
       value: 
       objectReference: {fileID: 1243477765}
+    - target: {fileID: 2694896799641486246, guid: f840492545de1c54f800e3a1ec040871,
+        type: 3}
+      propertyPath: createGamePanel
+      value: 
+      objectReference: {fileID: 8030523029955579443, guid: c12006ac468158443bfc57a4b8a82257,
+        type: 3}
     - target: {fileID: 5178640972039904911, guid: f840492545de1c54f800e3a1ec040871,
         type: 3}
       propertyPath: m_AnchorMax.y

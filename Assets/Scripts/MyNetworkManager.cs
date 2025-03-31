@@ -119,6 +119,7 @@ public class MyNetworkManager : NetworkManager
             var conn = RoomPlayers[i].connectionToClient;
             var gamePlayerInstance = Instantiate(gamePlayerPrefab);
             gamePlayerInstance.SetDisplayName(RoomPlayers[i].DisplayName);
+            gamePlayerInstance.SetFarmerName(RoomPlayers[i].FarmerName);
 
             NetworkServer.Destroy(conn.identity.gameObject);
 
@@ -154,7 +155,10 @@ public class MyNetworkManager : NetworkManager
    public void NotifyPlayersOfReadyState()
    {
       foreach (var player in RoomPlayers)
+      {
          player.HandleReadyToStart(IsReadyToStart());
+
+      }
    }
 
    bool IsReadyToStart()

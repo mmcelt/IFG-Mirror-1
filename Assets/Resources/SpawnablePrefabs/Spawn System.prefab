@@ -65,4 +65,5 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  playerPrefab: {fileID: 4999794094966535909, guid: 002e075903c842a42985d16c3cba6dbf, type: 3}
+  tractorPrefab: {fileID: 4999794094966535909, guid: 002e075903c842a42985d16c3cba6dbf,
+    type: 3}

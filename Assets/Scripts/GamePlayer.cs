@@ -8,8 +8,9 @@ public class GamePlayer : NetworkBehaviour
    #region Fields & Properties
 
    [SyncVar]
-   string displayName = "Loading...";
-   public GameObject MyPlayerPiece;
+   [SerializeField] string displayName = "Not Set...";
+   [SyncVar]
+   [SerializeField] string farmerName = "Not Set";
 
    MyNetworkManager room;
 
@@ -51,6 +52,20 @@ public class GamePlayer : NetworkBehaviour
       displayName = newName;
    }
 
+   [Server]
+   public void SetFarmerName(string newName)
+   {
+      farmerName = newName;
+   }
+
+   #endregion
+
+   #region Client
+
+   public string GetFarmerName()
+   {
+      return farmerName;
+   }
    #endregion
 }
 
