@@ -9,6 +9,15 @@ public class FarmerDatabaseSO : ScriptableObject
 
    #endregion
 
+   public FarmerSO[] GetAllFarmers() => Farmers;
+
+   public FarmerSO GetFarmerById(int id)
+   {
+      foreach (var farmer in Farmers)
+         if(farmer.Id == id) return farmer;
+
+      return null;
+   }
 
 }
 

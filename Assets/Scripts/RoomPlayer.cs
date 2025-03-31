@@ -14,6 +14,7 @@ public class RoomPlayer : NetworkBehaviour
    [SerializeField] Transform farmerSelectionButtonsHolder;
    [SerializeField] FarmerSelectButton farmerSelectionButtonPrefab;
    [SerializeField] FarmerDatabaseSO farmerDatabase;
+   [SerializeField] FarmerSO selectedFarmer;
 
    [SyncVar(hook = nameof(HandleDisplayNameChanged))]
    public string DisplayName = "Loading...";
@@ -74,7 +75,13 @@ public class RoomPlayer : NetworkBehaviour
       foreach (var farmer in farmerDatabase.Farmers)
       {
          var selectionButtonInstance = Instantiate(farmerSelectionButtonPrefab, farmerSelectionButtonsHolder);
+         selectionButtonInstance.SetupButton(this, farmer);
       }
+   }
+
+   public void SetSelectedFarmer(FarmerSO farmer)
+   {
+      selectedFarmer = farmer;
    }
 
    public void HandleDisplayNameChanged(string oldValue, string newValue)
@@ -135,7 +142,7 @@ public class RoomPlayer : NetworkBehaviour
    [Command]
    public void CmdReadyUp()
    {
-      IsReady = !IsReady;
+      IsReady = true;
 
       Room.NotifyPlayersOfReadyState();
    }

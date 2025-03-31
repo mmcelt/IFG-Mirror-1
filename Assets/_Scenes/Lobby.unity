@@ -611,8 +611,6 @@ MonoBehaviour:
     type: 3}
   playerSpawnSystem: {fileID: 6857085770860115021, guid: 30286d4e666de5c458805b277cb93050,
     type: 3}
-  roundSystem: {fileID: 6857085770860115021, guid: b047d65dd07faa6479e2ea5da05e3815,
-    type: 3}
 --- !u!1001 &4577729567328421588
 PrefabInstance:
   m_ObjectHideFlags: 0

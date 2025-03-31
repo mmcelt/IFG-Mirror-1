@@ -13,5 +13,6 @@ public class FarmerSO : ScriptableObject
    public GameObject gamePlayerPrefab;
 
    #endregion
+
 }
 

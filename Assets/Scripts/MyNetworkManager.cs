@@ -16,7 +16,7 @@ public class MyNetworkManager : NetworkManager
    [Header("Game")]
    [SerializeField] GamePlayer gamePlayerPrefab;
    [SerializeField] GameObject playerSpawnSystem;
-   [SerializeField] GameObject roundSystem;
+   //[SerializeField] GameObject roundSystem;
 
    public static Action OnClientConnected;
    public static Action OnClientDisconnected;

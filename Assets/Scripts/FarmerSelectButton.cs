@@ -1,9 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FarmerSelectButton : MonoBehaviour
-{	
+{
    #region Fields & Properties
 
+   [SerializeField] Image iconImage;
+   [SerializeField] GameObject takenOverlay;
+
+   RoomPlayer player;
+   FarmerSO farmer;
 
    #endregion
 
@@ -25,5 +31,16 @@ public class FarmerSelectButton : MonoBehaviour
    //}
    #endregion
 
+   public void SetupButton(RoomPlayer _player, FarmerSO _farmer)
+   {
+      player = _player;
+      farmer = _farmer;
+      iconImage.sprite = _farmer.Icon;
+   }
+
+   public void OnButtonClick()
+   {
+      player.SetSelectedFarmer(farmer);
+   }
 }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class CharacterSelect : NetworkBehaviour
+public class FarmerSelect : NetworkBehaviour
 {
    [SerializeField] GameObject characterSelectDisplay;
    [SerializeField] Transform characterPreviewParent;
