@@ -18,7 +18,7 @@ public class RoomPlayer : NetworkBehaviour
 
    [SyncVar(hook = nameof(HandleDisplayNameChanged))]
    public string DisplayName = "Loading...";
-   [SyncVar]
+   [SyncVar(hook = nameof(HandleFarmerNameChanged))]
    public string FarmerName = "Not Set";
    [SyncVar(hook = nameof(HandleReadyStatusChanged))]
    public bool IsReady = false;
@@ -91,6 +91,11 @@ public class RoomPlayer : NetworkBehaviour
       UpdateDisplay();
    }
 
+   public void HandleFarmerNameChanged(string oldValue, string newValue)
+   {
+      UpdateDisplay();
+   }
+
    public void HandleReadyStatusChanged(bool oldValue, bool newValue)
    {
       UpdateDisplay();
@@ -131,6 +136,13 @@ public class RoomPlayer : NetworkBehaviour
 
       startGameButton.interactable = readyToStart;
    }
+
+   public void SetFarmer()
+   {
+      Debug.Log($"In SF: {selectedFarmer.Name}");
+
+      CmdSetFarmer(selectedFarmer.Name);
+   }
    #endregion
 
    #region Server
@@ -145,9 +157,14 @@ public class RoomPlayer : NetworkBehaviour
    public void CmdReadyUp()
    {
       IsReady = true;
-      FarmerName = selectedFarmer.Name;
-
       Room.NotifyPlayersOfReadyState();
+   }
+
+   [Command]
+   public void CmdSetFarmer(string myFarmer)
+   {
+      Debug.Log($"In CSF: {myFarmer}");
+      FarmerName = myFarmer;
    }
 
    [Command]

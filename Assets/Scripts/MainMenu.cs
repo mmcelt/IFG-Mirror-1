@@ -13,13 +13,14 @@ public class MainMenu : MonoBehaviour
 
    #region Unity Callbacks
 
-   //void Awake() 
+   //void Awake()
    //{
-   //	
+   //   nameInput.Select();
    //}
 
    void Start()
    {
+      nameInput.ActivateInputField();
       nameInput.Select();
    }
 

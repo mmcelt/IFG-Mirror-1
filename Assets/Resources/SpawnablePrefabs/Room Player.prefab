@@ -632,7 +632,9 @@ MonoBehaviour:
   farmerSelectionButtonPrefab: {fileID: 3714530602585521119, guid: c7b8106c5f6b6c1449e3153615c652a0,
     type: 3}
   farmerDatabase: {fileID: 11400000, guid: c2d02753e5d7edb4981cba4c6fcd7f60, type: 2}
+  selectedFarmer: {fileID: 0}
   DisplayName: Loading...
+  FarmerName: Not Set
   IsReady: 0
 --- !u!1 &1017848060495145692
 GameObject:
@@ -758,6 +760,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2787930767086274077}
         m_TargetAssemblyTypeName: NetworkRoomPlayerLobby, Assembly-CSharp
         m_MethodName: CmdReadyUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2787930767086274077}
+        m_TargetAssemblyTypeName: RoomPlayer, Assembly-CSharp
+        m_MethodName: SetFarmer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
