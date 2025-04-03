@@ -7,7 +7,8 @@ public class PlayerSpawnSystem : NetworkBehaviour
 {
    #region Fields & Properties
 
-   [SerializeField] GameObject tractorPrefab;
+   [SerializeField] FarmerDatabaseSO farmerDatabase;
+   [SerializeField] GameObject[] tractorPrefabs;
 
    static List<Transform> spawnPoints = new List<Transform>();
 
@@ -46,6 +47,8 @@ public class PlayerSpawnSystem : NetworkBehaviour
    [Server]
    void SpawnPlayer(NetworkConnectionToClient conn)
    {
+      string farmerName = conn.identity.GetComponent<GamePlayer>().GetFarmerName();
+
       Transform spawnpoint = spawnPoints.ElementAtOrDefault(nextIndex);
 
       if (!spawnpoint)
@@ -54,11 +57,11 @@ public class PlayerSpawnSystem : NetworkBehaviour
          return;
       }
 
-      GameObject tractorInstance = Instantiate(tractorPrefab, spawnPoints[nextIndex].position, spawnPoints[nextIndex].rotation);
+      GameObject tractorInstance = Instantiate(tractorPrefabs[IFG.GetIndexFromFarmer(farmerName)], spawnPoints[nextIndex].position, spawnPoints[nextIndex].rotation);
 
       //ADDED THIS FOR MY USEAGE
       Debug.Log($"In SP.conn: {conn.identity.GetComponent<GamePlayer>().GetFarmerName()}");
-      tractorInstance.GetComponent<Tractor>().SetColorFromFarmer(conn.identity.GetComponent<GamePlayer>().GetFarmerName());
+      //tractorInstance.GetComponent<Tractor>().SetFarmerName(farmerName);
 
       NetworkServer.Spawn(tractorInstance, conn);
 

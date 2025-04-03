@@ -15,6 +15,11 @@ public class RoomPlayer : NetworkBehaviour
    [SerializeField] FarmerSelectButton farmerSelectionButtonPrefab;
    [SerializeField] FarmerDatabaseSO farmerDatabase;
    [SerializeField] FarmerSO selectedFarmer; //SET BY SELECTION BUTTON
+   public Button lockInButton;
+   [Header("Intro Tractor Stuff")]
+   public Texture[] IntroTextures;
+   public GameObject IntroPrefab, IntroInstance;
+   public Transform IntroSpawnPoint;
 
    [SyncVar(hook = nameof(HandleDisplayNameChanged))]
    public string DisplayName = "Loading...";
@@ -24,6 +29,7 @@ public class RoomPlayer : NetworkBehaviour
    public bool IsReady = false;
 
    bool isLeader;
+   public bool IsSpawnedIn;
 
    public bool IsLeader
    {
@@ -139,8 +145,6 @@ public class RoomPlayer : NetworkBehaviour
 
    public void SetFarmer()
    {
-      Debug.Log($"In SF: {selectedFarmer.Name}");
-
       CmdSetFarmer(selectedFarmer.Name);
    }
    #endregion
@@ -163,7 +167,6 @@ public class RoomPlayer : NetworkBehaviour
    [Command]
    public void CmdSetFarmer(string myFarmer)
    {
-      Debug.Log($"In CSF: {myFarmer}");
       FarmerName = myFarmer;
    }
 

@@ -1,6 +1,7 @@
+using Mirror;
 using UnityEngine;
 
-public class Tractor : MonoBehaviour
+public class Tractor : NetworkBehaviour
 {
    #region Fields & Properties
 
@@ -28,10 +29,10 @@ public class Tractor : MonoBehaviour
    //}
    #endregion
 
-   public void SetColorFromFarmer(string farmer)
+   public void SetFarmerName(string farmer)
    {
       farmerName = farmer;
-      ChangeColor();
+      //ChangeColor();
    }
 
    void ChangeColor()
@@ -42,10 +43,12 @@ public class Tractor : MonoBehaviour
       {
          if (r.name == "tractor")
          {
+            Texture tex = textures[IFG.GetIndexFromFarmer(farmerName)];
             Debug.Log($"In CC");
-            r.material.SetTexture("_BaseMap", textures[IFG.GetIndexFromFarmer(farmerName)]);
+            r.material.SetTexture("_BaseMap", tex);
          }
       }
    }
+
 }
 

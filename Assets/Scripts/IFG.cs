@@ -15,6 +15,9 @@ public class IFG
 
    #endregion
 
+   //Colors
+   public static Color Purple = new Color(0.5f, 0f, 0.5f);
+
    //Crops / Equipment
    public const string Hay = "Hay";
    public const string Grain = "Grain";
@@ -58,6 +61,28 @@ public class IFG
          default:
             Debug.LogError($"FUBAR FARMER! {farmer}");
             return 0;
+      }
+   }
+
+   public static Color GetColorFromFarmer(string farmer)
+   {
+      switch (farmer)
+      {
+         case Ron:
+            return Color.blue;
+            case Janis:
+            return Color.red;
+            case Jerry:
+            return Purple;
+            case Ric:
+            return Color.black;
+            case Becky:
+            return Color.white;
+            case Mike:
+            return Color.yellow;
+         default:
+            Debug.LogWarning($"FURAR Farmer: {farmer}");
+            return Color.cyan;
       }
    }
 

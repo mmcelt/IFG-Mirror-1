@@ -65,5 +65,11 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  tractorPrefab: {fileID: 4999794094966535909, guid: 002e075903c842a42985d16c3cba6dbf,
-    type: 3}
+  farmerDatabase: {fileID: 0}
+  tractorPrefabs:
+  - {fileID: 1034761654395229591, guid: e048856614ed09d46a31a293f60d6a1d, type: 3}
+  - {fileID: 2078636489194126036, guid: 08efca18764e19a4aad29e8df9d987ee, type: 3}
+  - {fileID: 2812629765616947175, guid: 94328bca7f485494f894d018b593d684, type: 3}
+  - {fileID: 6322505732721709448, guid: 3f5fa5b8650a15840ac71ef57d3dced4, type: 3}
+  - {fileID: 4225810857748589278, guid: ba756dbe39689024fbd1902760013251, type: 3}
+  - {fileID: 6654237051389581821, guid: aafbc297dfbcf484485e2e34bead7c6d, type: 3}
