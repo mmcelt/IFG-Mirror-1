@@ -39,6 +39,11 @@ public class FarmerSelectButton : MonoBehaviour
       iconImage.sprite = _farmer.Icon;
    }
 
+   public GameObject GetTakenOverlay()
+   {
+      return takenOverlay;
+   }
+
    public void OnButtonClick()
    {
       player.SetSelectedFarmer(farmer);

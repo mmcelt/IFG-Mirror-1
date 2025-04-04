@@ -99,7 +99,16 @@ public class RoomPlayer : NetworkBehaviour
 
    public void HandleFarmerNameChanged(string oldValue, string newValue)
    {
-      UpdateDisplay();
+      //if (!isLocalPlayer)
+      //{
+      //   foreach (var farmer in farmerDatabase.GetAllFarmers())
+      //   {
+      //      if (farmer.Name == FarmerName)
+      //      {
+      //         farmerSelectionButtonsHolder.GetChild(farmer.Id).GetComponent<FarmerSelectButton>().GetTakenOverlay().SetActive(true);
+      //      }
+      //   }
+      //}
    }
 
    public void HandleReadyStatusChanged(bool oldValue, bool newValue)
