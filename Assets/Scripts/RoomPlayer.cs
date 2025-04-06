@@ -28,8 +28,8 @@ public class RoomPlayer : NetworkBehaviour
    public string FarmerName = "Not Set";
    [SyncVar(hook = nameof(HandleReadyStatusChanged))]
    public bool IsReady = false;
-   [SyncVar]
-   public bool IsLockedIn;
+   //[SyncVar]
+   //public bool IsLockedIn;
 
    bool isLeader;
    public bool IsSpawnedIn;
@@ -92,8 +92,8 @@ public class RoomPlayer : NetworkBehaviour
          farmerSelectButtons.Add(selectionButtonInstance);
       }
 
-      Transform[] myChildren=farmerSelectionButtonsHolder.GetComponentsInChildren<Transform>();
-      Debug.Log($"My Children: {myChildren.Length}");
+      //Transform[] myChildren=farmerSelectionButtonsHolder.GetComponentsInChildren<Transform>();
+      //Debug.Log($"My Children: {myChildren.Length}");
    }
 
    public void SetSelectedFarmer(FarmerSO farmer)
@@ -177,7 +177,7 @@ public class RoomPlayer : NetworkBehaviour
    public void SetFarmer()
    {
       CmdSetFarmer(selectedFarmer.Name);
-      CmdSetIsLockedIn();
+      //CmdSetIsLockedIn();
    }
    #endregion
 
@@ -196,12 +196,12 @@ public class RoomPlayer : NetworkBehaviour
       Room.NotifyPlayersOfReadyState();
    }
 
-   [Command]
-   public void CmdSetIsLockedIn()
-   {
-      IsLockedIn = true;
-      //Room.NotifiyPlayersOfLockedInState();
-   }
+   //[Command]
+   //public void CmdSetIsLockedIn()
+   //{
+   //   IsLockedIn = true;
+   //   //Room.NotifiyPlayersOfLockedInState();
+   //}
 
    [Command]
    public void CmdSetFarmer(string myFarmer)

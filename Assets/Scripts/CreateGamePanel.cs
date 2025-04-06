@@ -16,12 +16,12 @@ public class CreateGamePanel : MonoBehaviour
    [SerializeField] Toggle borgDieToggle;
    [SerializeField] Button ConfirmButton, backButton;
 
-   //Action<IFG.GameType, int, float, bool> GameInfoSet; //gameType,nwAmount,tgLength,borgDie
+   //public static Action<IFG.GameType, int, float, bool> GameInfoSet; //gameType,nwAmount,tgLength,borgDie
 
-   int nwAmount;
-   IFG.GameType gameType;
-   float tgLength;
-   bool borg = true;
+   [field: SerializeField] public static int nwAmount;
+   [field: SerializeField] public static IFG.GameType gameType;
+   [field: SerializeField] public static float tgLength;
+   [field: SerializeField] public static bool borg = true;
 
    MyNetworkManager room;
    MyNetworkManager Room
@@ -109,7 +109,7 @@ public class CreateGamePanel : MonoBehaviour
       //Room.NetworthAmount = nwAmount;
       //Room.TimedLength = tgLength;
       //Room.BorgDie = borg;
-
+      gameObject.SetActive(false);
       Room.StartHost();
    }
 }
