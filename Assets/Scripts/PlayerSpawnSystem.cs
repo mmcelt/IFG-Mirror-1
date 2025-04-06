@@ -59,10 +59,6 @@ public class PlayerSpawnSystem : NetworkBehaviour
 
       GameObject tractorInstance = Instantiate(tractorPrefabs[IFG.GetIndexFromFarmer(farmerName)], spawnPoints[nextIndex].position, spawnPoints[nextIndex].rotation);
 
-      //ADDED THIS FOR MY USEAGE
-      Debug.Log($"In SP.conn: {conn.identity.GetComponent<GamePlayer>().GetFarmerName()}");
-      //tractorInstance.GetComponent<Tractor>().SetFarmerName(farmerName);
-
       NetworkServer.Spawn(tractorInstance, conn);
 
       nextIndex++;

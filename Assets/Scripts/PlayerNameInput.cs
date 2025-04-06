@@ -24,23 +24,30 @@ public class PlayerNameInput : MonoBehaviour
 
    void Start()
    {
-      SetupInputField();
+      //SetupInputField();
+      nameInput.Select();
+      nameInput.ActivateInputField();
    }
 
    #endregion
 
    void SetupInputField()
    {
-      if(!PlayerPrefs.HasKey(PlayerPrefsNameKey)) return;
+      //if(!PlayerPrefs.HasKey(PlayerPrefsNameKey)) return;
 
-      string defaultName = PlayerPrefs.GetString(PlayerPrefsNameKey);
+      //string defaultName = PlayerPrefs.GetString(PlayerPrefsNameKey);
 
-      nameInput.text = defaultName;
+      //nameInput.text = defaultName;
 
-      SetPlayerName(defaultName);
+      SetPlayerName(nameInput.text);
    }
 
-   public void SetPlayerName(string name)
+   public void OnNameInputValueChanged(string name)
+   {
+      SetPlayerName(name);
+   }
+
+   void SetPlayerName(string name)
    {
       continueButton.interactable = !string.IsNullOrEmpty(name);
    }
@@ -49,7 +56,7 @@ public class PlayerNameInput : MonoBehaviour
    {
       DisplayName = nameInput.text;
 
-      PlayerPrefs.SetString(PlayerPrefsNameKey, DisplayName);
+      //PlayerPrefs.SetString(PlayerPrefsNameKey, DisplayName);
    }
 }
 

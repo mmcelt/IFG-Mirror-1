@@ -204,7 +204,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -281,5 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180b4d098974f4048969bf4705878934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 3183658896832198107}
   iconImage: {fileID: 6101202453425617749}
   takenOverlay: {fileID: 136362054691676273}
+  player: {fileID: 0}

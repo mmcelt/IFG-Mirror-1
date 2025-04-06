@@ -1,4 +1,5 @@
 using Mirror;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -51,6 +52,8 @@ public class RoomPlayer : NetworkBehaviour
       }
    }
 
+   [SerializeField] List<FarmerSelectButton> farmerSelectButtons = new List<FarmerSelectButton>();
+
    #endregion
 
    #region Mirror Callbacks
@@ -84,7 +87,11 @@ public class RoomPlayer : NetworkBehaviour
       {
          var selectionButtonInstance = Instantiate(farmerSelectionButtonPrefab, farmerSelectionButtonsHolder);
          selectionButtonInstance.SetupButton(this, farmer);
+         farmerSelectButtons.Add(selectionButtonInstance);
       }
+
+      Transform[] myChildren=farmerSelectionButtonsHolder.GetComponentsInChildren<Transform>();
+      Debug.Log($"My Children: {myChildren.Length}");
    }
 
    public void SetSelectedFarmer(FarmerSO farmer)
@@ -99,21 +106,38 @@ public class RoomPlayer : NetworkBehaviour
 
    public void HandleFarmerNameChanged(string oldValue, string newValue)
    {
-      //if (!isLocalPlayer)
-      //{
-      //   foreach (var farmer in farmerDatabase.GetAllFarmers())
-      //   {
-      //      if (farmer.Name == FarmerName)
-      //      {
-      //         farmerSelectionButtonsHolder.GetChild(farmer.Id).GetComponent<FarmerSelectButton>().GetTakenOverlay().SetActive(true);
-      //      }
-      //   }
-      //}
+      int index = -1;
+
+      foreach (var f in farmerDatabase.GetAllFarmers())
+      {
+         if (f.Name == FarmerName)
+         {
+            index = f.Id;
+
+            foreach (var button in farmerSelectButtons)
+            {
+               button.button.interactable = false;
+            }
+
+            break;
+         }
+      }
+      CmdSetRemoteOverlays(index);
    }
 
    public void HandleReadyStatusChanged(bool oldValue, bool newValue)
    {
       UpdateDisplay();
+   }
+
+   [ClientRpc(includeOwner = false)]
+   void RpcSetRemoteOverlays(int farmer)
+   {
+      Debug.Log($"In RPC: {farmer}::{NetworkClient.localPlayer.GetComponent<RoomPlayer>().FarmerName}");
+
+      Debug.Log($"Buttons Count: {NetworkClient.localPlayer.GetComponent<RoomPlayer>().farmerSelectButtons.Count}");
+
+      NetworkClient.localPlayer.GetComponent<RoomPlayer>().farmerSelectButtons[farmer].SetDisabled();
    }
 
    void UpdateDisplay()
@@ -138,7 +162,7 @@ public class RoomPlayer : NetworkBehaviour
          playerReadyTexts[i].text = string.Empty;
       }
 
-      for(int i = 0; i < Room.RoomPlayers.Count; i++)
+      for (int i = 0; i < Room.RoomPlayers.Count; i++)
       {
          playerNameTexts[i].text = Room.RoomPlayers[i].DisplayName;
          playerReadyTexts[i].text = Room.RoomPlayers[i].IsReady ? "<color=green>Ready</color>" : "<color=red>Not Ready</color>";
@@ -177,6 +201,12 @@ public class RoomPlayer : NetworkBehaviour
    public void CmdSetFarmer(string myFarmer)
    {
       FarmerName = myFarmer;
+   }
+
+   [Command]
+   void CmdSetRemoteOverlays(int farmer)
+   {
+      RpcSetRemoteOverlays(farmer);
    }
 
    [Command]

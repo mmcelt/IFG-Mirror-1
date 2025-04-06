@@ -1,13 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class FarmerSelectButton : MonoBehaviour
 {
    #region Fields & Properties
 
+   public Button button;
    [SerializeField] Image iconImage;
    [SerializeField] GameObject takenOverlay;
+
+   public bool IsDiabled {  get; private set; }
 
    [SerializeField] RoomPlayer player;
    FarmerSO farmer;
@@ -44,6 +46,11 @@ public class FarmerSelectButton : MonoBehaviour
       return takenOverlay;
    }
 
+   public FarmerSO GetFarmer()
+   {
+      return farmer;
+   }
+
    public void OnButtonClick()
    {
       player.SetSelectedFarmer(farmer);
@@ -71,7 +78,14 @@ public class FarmerSelectButton : MonoBehaviour
       }
    }
 
-   int GetIndexFromFarmer(string farmer)
+   public void SetDisabled()
+   {
+      IsDiabled = true;
+      takenOverlay.SetActive(true);
+      button.interactable = false;
+   }
+
+   public int GetIndexFromFarmer(string farmer)
    {
       switch (farmer)
       {
