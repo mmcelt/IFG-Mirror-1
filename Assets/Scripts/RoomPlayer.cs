@@ -28,6 +28,8 @@ public class RoomPlayer : NetworkBehaviour
    public string FarmerName = "Not Set";
    [SyncVar(hook = nameof(HandleReadyStatusChanged))]
    public bool IsReady = false;
+   [SyncVar]
+   public bool IsLockedIn;
 
    bool isLeader;
    public bool IsSpawnedIn;
@@ -133,10 +135,6 @@ public class RoomPlayer : NetworkBehaviour
    [ClientRpc(includeOwner = false)]
    void RpcSetRemoteOverlays(int farmer)
    {
-      Debug.Log($"In RPC: {farmer}::{NetworkClient.localPlayer.GetComponent<RoomPlayer>().FarmerName}");
-
-      Debug.Log($"Buttons Count: {NetworkClient.localPlayer.GetComponent<RoomPlayer>().farmerSelectButtons.Count}");
-
       NetworkClient.localPlayer.GetComponent<RoomPlayer>().farmerSelectButtons[farmer].SetDisabled();
    }
 
@@ -179,6 +177,7 @@ public class RoomPlayer : NetworkBehaviour
    public void SetFarmer()
    {
       CmdSetFarmer(selectedFarmer.Name);
+      CmdSetIsLockedIn();
    }
    #endregion
 
@@ -195,6 +194,13 @@ public class RoomPlayer : NetworkBehaviour
    {
       IsReady = true;
       Room.NotifyPlayersOfReadyState();
+   }
+
+   [Command]
+   public void CmdSetIsLockedIn()
+   {
+      IsLockedIn = true;
+      //Room.NotifiyPlayersOfLockedInState();
    }
 
    [Command]

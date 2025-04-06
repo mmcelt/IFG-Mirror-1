@@ -22,7 +22,7 @@ public class PlayerNameInput : MonoBehaviour
    //	
    //}
 
-   void Start()
+   void OnEnable()
    {
       //SetupInputField();
       nameInput.Select();
