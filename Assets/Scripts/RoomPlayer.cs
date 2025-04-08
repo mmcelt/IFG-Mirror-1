@@ -28,6 +28,8 @@ public class RoomPlayer : NetworkBehaviour
    public string FarmerName = "Not Set";
    [SyncVar(hook = nameof(HandleReadyStatusChanged))]
    public bool IsReady = false;
+   [SyncVar]
+   public int Nop;
 
    bool isLeader;
    public bool IsSpawnedIn;
@@ -40,13 +42,6 @@ public class RoomPlayer : NetworkBehaviour
          startGameButton.gameObject.SetActive(value);
       }
    }
-
-   //game info...
-   [SerializeField] int nop;
-   //[SerializeField] IFG.GameType gameType;
-   //[SerializeField] int networthAmount;
-   //[SerializeField] float timedLength;
-   //[SerializeField] bool borgDie;
 
    MyNetworkManager room;
 
@@ -63,59 +58,27 @@ public class RoomPlayer : NetworkBehaviour
 
    #endregion
 
-   #region Setters & Getters
-
-   public void SetNOP(int _nop)
+   //[ServerCallback]
+   void Update()
    {
-      nop = _nop;
+      Debug.Log($"Update: {Room.RoomPlayers.Count}::{Nop}");
+      lockInButton.gameObject.SetActive(Room.RoomPlayers.Count == Nop);
    }
 
-   //public void SetGameType(IFG.GameType _gameType)
-   //{
-   //   gameType = _gameType;
-   //}
+   #region Setters & Getters
 
-   //public void SetNetworthAmount(int _networthAmount)
-   //{
-   //   networthAmount = _networthAmount;
-   //}
-
-   //public void SetTimedLength(float _timedLength)
-   //{
-   //   timedLength = _timedLength;
-   //}
-
-   //public void SetBorgDie(bool _borgDie)
-   //{
-   //   borgDie = _borgDie;
-   //}
+   [Server]
+   public void SetNOP(int _nop)
+   {
+      Nop = _nop;
+   }
 
    public int GetNOP()
    {
-      return nop;
+      return Nop;
    }
 
-   //public IFG.GameType GetGameType()
-   //{
-   //   return gameType;
-   //}
-
-   //public int GetNetworthAmount()
-   //{
-   //   return networthAmount;
-   //}
-
-   //public float GetTimedLength()
-   //{
-   //   return timedLength;
-   //}
-
-   //public bool GetBorgDie()
-   //{
-   //   return borgDie;
-   //}
-
-   #endregion
+    #endregion
 
    #region Mirror Callbacks
 

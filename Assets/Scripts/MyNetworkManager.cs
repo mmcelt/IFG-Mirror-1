@@ -90,6 +90,7 @@ public class MyNetworkManager : NetworkManager
          RoomPlayer roomPlayerInstance = Instantiate(roomPlayerPrefab);
 
          roomPlayerInstance.IsLeader = isLeader;
+         roomPlayerInstance.SetNOP(minPlayers);
 
          NetworkServer.AddPlayerForConnection(conn, roomPlayerInstance.gameObject);
       }
@@ -148,8 +149,8 @@ public class MyNetworkManager : NetworkManager
          GameObject playerSpawnSystemInstance = Instantiate(playerSpawnSystem);
          NetworkServer.Spawn(playerSpawnSystemInstance);
 
-         GameObject gameDataManagerInstance = Instantiate(gameDataManagerPrefab);
-         NetworkServer.Spawn(gameDataManagerInstance);
+         //GameObject gameDataManagerInstance = Instantiate(gameDataManagerPrefab);
+         //NetworkServer.Spawn(gameDataManagerInstance);
       }
    }
 
