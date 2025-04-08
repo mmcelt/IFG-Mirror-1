@@ -26,6 +26,12 @@ public class MyNetworkManager : NetworkManager
    public List<RoomPlayer> RoomPlayers { get; } = new List<RoomPlayer>();
    public List<GamePlayer> GamePlayers { get; } = new List<GamePlayer>();
 
+   //game info
+   public IFG.GameType GameType;
+   public int NetworthAmount;
+   public float TimedLength;
+   public bool BorgDie;
+
    #endregion
 
    public void SetMinPlayers(int amount)
@@ -120,6 +126,11 @@ public class MyNetworkManager : NetworkManager
             var gamePlayerInstance = Instantiate(gamePlayerPrefab);
             gamePlayerInstance.SetDisplayName(RoomPlayers[i].DisplayName);
             gamePlayerInstance.SetFarmerName(RoomPlayers[i].FarmerName);
+            gamePlayerInstance.SetNOP(minPlayers);
+            gamePlayerInstance.SetGameType(GameType);
+            gamePlayerInstance.SetNetworthAmount(NetworthAmount);
+            gamePlayerInstance.SetTimedLength(TimedLength);
+            gamePlayerInstance.SetBorgDie(BorgDie);
 
             NetworkServer.Destroy(conn.identity.gameObject);
 
@@ -137,8 +148,8 @@ public class MyNetworkManager : NetworkManager
          GameObject playerSpawnSystemInstance = Instantiate(playerSpawnSystem);
          NetworkServer.Spawn(playerSpawnSystemInstance);
 
-         //GameObject gameDataManagerInstance = Instantiate(gameDataManagerPrefab);
-         //NetworkServer.Spawn(gameDataManagerInstance);
+         GameObject gameDataManagerInstance = Instantiate(gameDataManagerPrefab);
+         NetworkServer.Spawn(gameDataManagerInstance);
       }
    }
 

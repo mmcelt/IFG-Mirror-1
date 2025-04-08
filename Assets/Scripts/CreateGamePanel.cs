@@ -105,10 +105,10 @@ public class CreateGamePanel : MonoBehaviour
    public void OnConfirmButtonClick()
    {
       //GameInfoSet?.Invoke(gameType, nwAmount, tgLength, borg);
-      //Room.GameType = gameType;
-      //Room.NetworthAmount = nwAmount;
-      //Room.TimedLength = tgLength;
-      //Room.BorgDie = borg;
+      Room.GameType = gameType;
+      Room.NetworthAmount = nwAmount;
+      Room.TimedLength = tgLength;
+      Room.BorgDie = borg;
       gameObject.SetActive(false);
       Room.StartHost();
    }

@@ -41,6 +41,13 @@ public class RoomPlayer : NetworkBehaviour
       }
    }
 
+   //game info...
+   [SerializeField] int nop;
+   //[SerializeField] IFG.GameType gameType;
+   //[SerializeField] int networthAmount;
+   //[SerializeField] float timedLength;
+   //[SerializeField] bool borgDie;
+
    MyNetworkManager room;
 
    public MyNetworkManager Room
@@ -53,6 +60,60 @@ public class RoomPlayer : NetworkBehaviour
    }
 
    [SerializeField] List<FarmerSelectButton> farmerSelectButtons = new List<FarmerSelectButton>();
+
+   #endregion
+
+   #region Setters & Getters
+
+   public void SetNOP(int _nop)
+   {
+      nop = _nop;
+   }
+
+   //public void SetGameType(IFG.GameType _gameType)
+   //{
+   //   gameType = _gameType;
+   //}
+
+   //public void SetNetworthAmount(int _networthAmount)
+   //{
+   //   networthAmount = _networthAmount;
+   //}
+
+   //public void SetTimedLength(float _timedLength)
+   //{
+   //   timedLength = _timedLength;
+   //}
+
+   //public void SetBorgDie(bool _borgDie)
+   //{
+   //   borgDie = _borgDie;
+   //}
+
+   public int GetNOP()
+   {
+      return nop;
+   }
+
+   //public IFG.GameType GetGameType()
+   //{
+   //   return gameType;
+   //}
+
+   //public int GetNetworthAmount()
+   //{
+   //   return networthAmount;
+   //}
+
+   //public float GetTimedLength()
+   //{
+   //   return timedLength;
+   //}
+
+   //public bool GetBorgDie()
+   //{
+   //   return borgDie;
+   //}
 
    #endregion
 
@@ -175,7 +236,6 @@ public class RoomPlayer : NetworkBehaviour
    public void SetFarmer()
    {
       CmdSetFarmer(selectedFarmer.Name);
-      //CmdSetIsLockedIn();
    }
    #endregion
 
@@ -193,13 +253,6 @@ public class RoomPlayer : NetworkBehaviour
       IsReady = true;
       Room.NotifyPlayersOfReadyState();
    }
-
-   //[Command]
-   //public void CmdSetIsLockedIn()
-   //{
-   //   IsLockedIn = true;
-   //   //Room.NotifiyPlayersOfLockedInState();
-   //}
 
    [Command]
    public void CmdSetFarmer(string myFarmer)

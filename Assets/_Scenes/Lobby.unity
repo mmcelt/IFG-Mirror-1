@@ -625,6 +625,10 @@ MonoBehaviour:
     type: 3}
   gameDataManagerPrefab: {fileID: 3422175705444766023, guid: 2bbc876f59188fe4ea769c1dc72c6943,
     type: 3}
+  GameType: 0
+  NetworthAmount: 0
+  TimedLength: 0
+  BorgDie: 0
 --- !u!1001 &4577729567328421588
 PrefabInstance:
   m_ObjectHideFlags: 0
