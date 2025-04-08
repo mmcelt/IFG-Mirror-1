@@ -28,8 +28,6 @@ public class RoomPlayer : NetworkBehaviour
    public string FarmerName = "Not Set";
    [SyncVar(hook = nameof(HandleReadyStatusChanged))]
    public bool IsReady = false;
-   //[SyncVar]
-   //public bool IsLockedIn;
 
    bool isLeader;
    public bool IsSpawnedIn;

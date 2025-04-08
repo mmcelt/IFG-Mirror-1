@@ -16,7 +16,7 @@ public class MyNetworkManager : NetworkManager
    [Header("Game")]
    [SerializeField] GamePlayer gamePlayerPrefab;
    [SerializeField] GameObject playerSpawnSystem;
-   //[SerializeField] GameObject roundSystem;
+   [SerializeField] GameObject gameDataManagerPrefab;
 
    public static Action OnClientConnected;
    public static Action OnClientDisconnected;
@@ -137,8 +137,8 @@ public class MyNetworkManager : NetworkManager
          GameObject playerSpawnSystemInstance = Instantiate(playerSpawnSystem);
          NetworkServer.Spawn(playerSpawnSystemInstance);
 
-         //GameObject roundSystemInstance = Instantiate(roundSystem);
-         //NetworkServer.Spawn(roundSystemInstance);
+         //GameObject gameDataManagerInstance = Instantiate(gameDataManagerPrefab);
+         //NetworkServer.Spawn(gameDataManagerInstance);
       }
    }
 
