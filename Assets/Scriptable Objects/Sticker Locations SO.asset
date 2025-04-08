@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf517a7ac70b6944faba80df613e882c, type: 3}
+  m_Name: Sticker Locations SO
+  m_EditorClassIdentifier: 
+  ronHarvester: {x: 0, y: 0, z: 0}
+  ronTractor: {x: 0, y: 0, z: 0}
+  ronHay: {x: 0, y: 0, z: 0}
+  ronGrain: {x: 0, y: 0, z: 0}
+  ronFruit: {x: 0, y: 0, z: 0}
+  ronSpuds: {x: 0, y: 0, z: 0}
+  ronFarmCows: {x: 0, y: 0, z: 0}
+  janHarvester: {x: 0, y: 0, z: 0}
+  janTractor: {x: 0, y: 0, z: 0}
+  janHay: {x: 0, y: 0, z: 0}
+  janGrain: {x: 0, y: 0, z: 0}
+  janFruit: {x: 0, y: 0, z: 0}
+  janSpuds: {x: 0, y: 0, z: 0}
+  janFarmCows: {x: 0, y: 0, z: 0}
+  jerHarvester: {x: 0, y: 0, z: 0}
+  jerTractor: {x: 0, y: 0, z: 0}
+  jerHay: {x: 0, y: 0, z: 0}
+  jerGrain: {x: 0, y: 0, z: 0}
+  jerFruit: {x: 0, y: 0, z: 0}
+  jerSpuds: {x: 0, y: 0, z: 0}
+  jerFarmCows: {x: 0, y: 0, z: 0}
+  ricHarvester: {x: 0, y: 0, z: 0}
+  ricTractor: {x: 0, y: 0, z: 0}
+  ricHay: {x: 0, y: 0, z: 0}
+  ricGrain: {x: 0, y: 0, z: 0}
+  ricFruit: {x: 0, y: 0, z: 0}
+  ricSpuds: {x: 0, y: 0, z: 0}
+  ricFarmCows: {x: 0, y: 0, z: 0}
+  becHarvester: {x: 0, y: 0, z: 0}
+  becTractor: {x: 0, y: 0, z: 0}
+  becHay: {x: 0, y: 0, z: 0}
+  becGrain: {x: 0, y: 0, z: 0}
+  becFruit: {x: 0, y: 0, z: 0}
+  becSpuds: {x: 0, y: 0, z: 0}
+  becFarmCows: {x: 0, y: 0, z: 0}
+  mikHarvester: {x: 0, y: 0, z: 0}
+  mikTractor: {x: 0, y: 0, z: 0}
+  mikHay: {x: 0, y: 0, z: 0}
+  mikGrain: {x: 0, y: 0, z: 0}
+  mikFruit: {x: 0, y: 0, z: 0}
+  mikSpuds: {x: 0, y: 0, z: 0}
+  mikFarmCows: {x: 0, y: 0, z: 0}
+  oxfordRange: {x: 0, y: 0, z: 0}
+  targheeRange: {x: 0, y: 0, z: 0}
+  lostRiverRange: {x: 0, y: 0, z: 0}
+  lemhiRange: {x: 0, y: 0, z: 0}

@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b639a9d3ecfdd9f4f875e4d747a8f632, type: 3}
+  m_Name: Player Positions SO
+  m_EditorClassIdentifier: 
+  ron00: {x: -60, y: 0, z: 69.5}
+  jan00: {x: -60, y: 0, z: 64.5}
+  jer00: {x: -60, y: 0, z: 59.5}
+  ric00: {x: -67.5, y: 0, z: 69.5}
+  bec00: {x: -67.5, y: 0, z: 64.5}
+  mik00: {x: -67.5, y: 0, z: 59.5}
+  ronPos01: {x: 0, y: 0, z: 0}
+  janPos01: {x: 0, y: 0, z: 0}
+  jerPos01: {x: 0, y: 0, z: 0}
+  ricPos01: {x: 0, y: 0, z: 0}
+  becPos01: {x: 0, y: 0, z: 0}
+  mikPos01: {x: 0, y: 0, z: 0}
+  northSideDif: {x: 0, y: 0, z: 0}
+  ronPos14: {x: 0, y: 0, z: 0}
+  janPos14: {x: 0, y: 0, z: 0}
+  jerPos14: {x: 0, y: 0, z: 0}
+  ricPos14: {x: 0, y: 0, z: 0}
+  becPos14: {x: 0, y: 0, z: 0}
+  mikPos14: {x: 0, y: 0, z: 0}
+  ronPos15: {x: 0, y: 0, z: 0}
+  janPos15: {x: 0, y: 0, z: 0}
+  jerPos15: {x: 0, y: 0, z: 0}
+  ricPos15: {x: 0, y: 0, z: 0}
+  becPos15: {x: 0, y: 0, z: 0}
+  mikPos15: {x: 0, y: 0, z: 0}
+  eastSideDif: {x: 0, y: 0, z: 0}
+  ronPos25: {x: 0, y: 0, z: 0}
+  janPos25: {x: 0, y: 0, z: 0}
+  jerPos25: {x: 0, y: 0, z: 0}
+  ricPos25: {x: 0, y: 0, z: 0}
+  becPos25: {x: 0, y: 0, z: 0}
+  mikPos25: {x: 0, y: 0, z: 0}
+  ronPos26: {x: 0, y: 0, z: 0}
+  janPos26: {x: 0, y: 0, z: 0}
+  jerPos26: {x: 0, y: 0, z: 0}
+  ricPos26: {x: 0, y: 0, z: 0}
+  becPos26: {x: 0, y: 0, z: 0}
+  mikPos26: {x: 0, y: 0, z: 0}
+  southSideDif: {x: 0, y: 0, z: 0}
+  ronPos36: {x: 0, y: 0, z: 0}
+  janPos36: {x: 0, y: 0, z: 0}
+  jerPos36: {x: 0, y: 0, z: 0}
+  ricPos36: {x: 0, y: 0, z: 0}
+  becPos36: {x: 0, y: 0, z: 0}
+  mikPos36: {x: 0, y: 0, z: 0}
+  ronPos37: {x: 0, y: 0, z: 0}
+  janPos37: {x: 0, y: 0, z: 0}
+  jerPos37: {x: 0, y: 0, z: 0}
+  ricPos37: {x: 0, y: 0, z: 0}
+  becPos37: {x: 0, y: 0, z: 0}
+  mikPos37: {x: 0, y: 0, z: 0}
+  westSideDif: {x: 0, y: 0, z: 0}

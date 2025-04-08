@@ -89,17 +89,17 @@ public class FarmerSelectButton : MonoBehaviour
    {
       switch (farmer)
       {
-         case IFG.Ron:
+         case IFG.RON:
             return 0;
-            case IFG.Janis:
+            case IFG.JANIS:
             return 1;
-            case IFG.Jerry:
+            case IFG.JERRY:
             return 2;
-         case IFG.Ric:
+         case IFG.RIC:
             return 3;
-            case IFG.Becky:
+            case IFG.BECKY:
             return 4;
-            case IFG.Mike:
+            case IFG.MIKE:
             return 5;
          default:
             Debug.LogWarning($"FUBAR farmer: {farmer}");

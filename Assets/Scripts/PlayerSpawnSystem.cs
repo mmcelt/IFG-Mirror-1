@@ -9,10 +9,9 @@ public class PlayerSpawnSystem : NetworkBehaviour
 
    [SerializeField] FarmerDatabaseSO farmerDatabase;
    [SerializeField] GameObject[] tractorPrefabs;
+   [SerializeField] PlayerPositionsSO spawnpoints;
 
-   static List<Transform> spawnPoints = new List<Transform>();
-
-   int nextIndex;
+   //int nextIndex;
 
    #endregion
 
@@ -35,33 +34,37 @@ public class PlayerSpawnSystem : NetworkBehaviour
    }
    #endregion
 
-   public static void AddSpawnPoint(Transform transform)
-   {
-      spawnPoints.Add(transform);
-
-      spawnPoints = spawnPoints.OrderBy(x => x.GetSiblingIndex()).ToList();
-   }
-
-   public static void RemoveSpawnPoint(Transform transform) => spawnPoints.Remove(transform);
-
    [Server]
    void SpawnPlayer(NetworkConnectionToClient conn)
    {
       string farmerName = conn.identity.GetComponent<GamePlayer>().GetFarmerName();
 
-      Transform spawnpoint = spawnPoints.ElementAtOrDefault(nextIndex);
+      Vector3 spawnpoint = GetSpawnpointFromFarmer(farmerName);
 
-      if (!spawnpoint)
-      {
-         Debug.LogError($"Missing Spawnpoint for player: {nextIndex}");
-         return;
-      }
-
-      GameObject tractorInstance = Instantiate(tractorPrefabs[IFG.GetIndexFromFarmer(farmerName)], spawnPoints[nextIndex].position, spawnPoints[nextIndex].rotation);
+      GameObject tractorInstance = Instantiate(tractorPrefabs[IFG.GetIndexFromFarmer(farmerName)], spawnpoint, Quaternion.Euler(0, 90, 0));
 
       NetworkServer.Spawn(tractorInstance, conn);
+   }
 
-      nextIndex++;
+   public Vector3 GetSpawnpointFromFarmer(string farmer)
+   {
+      switch (farmer)
+      {
+         case IFG.RON:
+            return spawnpoints.ron00;
+         case IFG.JANIS:
+            return spawnpoints.jan00;
+         case IFG.JERRY:
+            return spawnpoints.jer00;
+         case IFG.RIC:
+            return spawnpoints.ric00;
+         case IFG.MIKE:
+            return spawnpoints.mik00;
+         case IFG.BECKY:
+            return spawnpoints.bec00;
+         default:
+            return Vector3.zero;
+      }
    }
 }
 

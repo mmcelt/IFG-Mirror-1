@@ -11,21 +11,21 @@ public class PlayerSpawnPoint : MonoBehaviour
 
    void Awake()
    {
-      PlayerSpawnSystem.AddSpawnPoint(transform);
+      //PlayerSpawnSystem.AddSpawnPoint(transform);
    }
 
    void OnDestroy()
    {
-      PlayerSpawnSystem.RemoveSpawnPoint(transform);
+      //PlayerSpawnSystem.RemoveSpawnPoint(transform);
    }
 
-   void OnDrawGizmos()
-   {
-      Gizmos.color = Color.blue;
-      Gizmos.DrawSphere(transform.position, 1f);
-      Gizmos.color = Color.green;
-      Gizmos.DrawLine(transform.position, transform.position + transform.forward * 2f);
-   }
+   //void OnDrawGizmos()
+   //{
+   //   Gizmos.color = Color.blue;
+   //   Gizmos.DrawSphere(transform.position, 1f);
+   //   Gizmos.color = Color.green;
+   //   Gizmos.DrawLine(transform.position, transform.position + transform.forward * 2f);
+   //}
    #endregion
 
 }

@@ -6,12 +6,12 @@ public class IFG
 {
    #region Player Names
 
-   public const string Ron = "Rigby Ron";
-   public const string Janis = "Jensen Janis";
-   public const string Jerry = "Jolley Jerry";
-   public const string Ric = "Roberts Ric";
-   public const string Becky = "Bassett Becky";
-   public const string Mike = "Menan Mike";
+   public const string RON = "Rigby Ron";
+   public const string JANIS = "Jensen Janis";
+   public const string JERRY = "Jolley Jerry";
+   public const string RIC = "Roberts Ric";
+   public const string BECKY = "Bassett Becky";
+   public const string MIKE = "Menan Mike";
 
    #endregion
 
@@ -46,17 +46,17 @@ public class IFG
    {
       switch (farmer)
       {
-         case Ron:
+         case RON:
             return 0;
-         case Janis:
+         case JANIS:
             return 1;
-         case Jerry:
+         case JERRY:
             return 2;
-         case Ric:
+         case RIC:
             return 3;
-         case Becky:
+         case BECKY:
             return 4;
-         case Mike:
+         case MIKE:
             return 5;
          default:
             Debug.LogError($"FUBAR FARMER! {farmer}");
@@ -68,17 +68,17 @@ public class IFG
    {
       switch (farmer)
       {
-         case Ron:
+         case RON:
             return Color.blue;
-            case Janis:
+            case JANIS:
             return Color.red;
-            case Jerry:
+            case JERRY:
             return Purple;
-            case Ric:
+            case RIC:
             return Color.black;
-            case Becky:
+            case BECKY:
             return Color.white;
-            case Mike:
+            case MIKE:
             return Color.yellow;
          default:
             Debug.LogWarning($"FURAR Farmer: {farmer}");
