@@ -1,28 +1,20 @@
+using Mirror;
 using UnityEngine;
 
-public class PlayerSetup : MonoBehaviour
-{	
+public class PlayerSetup : NetworkBehaviour
+{
    #region Fields & Properties
 
+   [SerializeField] GameObject playerUI;
 
    #endregion
 
-   #region Unity Callbacks
+   #region Mirror Callbacks
 
-   //void Awake() 
-   //{
-   //	
-   //}
-
-   //void Start() 
-   //{
-   //	
-   //}
-
-   //void Update() 
-   //{
-   //	
-   //}
+   public override void OnStartAuthority()
+   {
+      playerUI.SetActive(true);
+   }
    #endregion
 
 }

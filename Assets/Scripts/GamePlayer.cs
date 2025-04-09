@@ -98,6 +98,11 @@ public class GamePlayer : NetworkBehaviour
 
    #region Mirror Callbacks
 
+   public override void OnStartAuthority()
+   {
+      
+   }
+
    public override void OnStartClient()
    {
       DontDestroyOnLoad(gameObject);

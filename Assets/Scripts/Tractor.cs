@@ -7,32 +7,28 @@ public class Tractor : NetworkBehaviour
 
    [SerializeField] Texture[] textures;
 
-   [SerializeField] string farmerName;
+   public string farmerName;     //TODO: PUBLIC 4 TESTING
+
+   public GamePlayer myPlayer;   //TODO: PUBLIC 4 TESTING
+
+   PlayerSetup pSetup;
+   PlayerManager pManager;
 
    #endregion
 
-   #region Unity Callbacks
+   #region Mirror Callbacks
 
-   //void Awake() 
-   //{
-   //	
-   //}
+   public override void OnStartAuthority()
+   {
+      GetMyGamePlayerStuff();
+      SetFarmerName(myPlayer.GetFarmerName());
+   }
 
-   //void Start()
-   //{
-
-   //}
-
-   //void Update() 
-   //{
-   //	
-   //}
    #endregion
 
-   public void SetFarmerName(string farmer)
+   void SetFarmerName(string farmer)
    {
       farmerName = farmer;
-      //ChangeColor();
    }
 
    public string GetFarmerName()
@@ -40,20 +36,29 @@ public class Tractor : NetworkBehaviour
       return farmerName;
    }
 
-   void ChangeColor()
+   void GetMyGamePlayerStuff()
    {
-      Renderer[] renderers = GetComponentsInChildren<Renderer>();
-
-      foreach (Renderer r in renderers)
+      GamePlayer[] gamePlayers = GameObject.FindObjectsOfType<GamePlayer>();
+      foreach (GamePlayer player in gamePlayers)
       {
-         if (r.name == "tractor")
+         if (player.isOwned)
          {
-            Texture tex = textures[IFG.GetIndexFromFarmer(farmerName)];
-            Debug.Log($"In CC");
-            r.material.SetTexture("_BaseMap", tex);
+            myPlayer = player;
+            pSetup=myPlayer.GetComponent<PlayerSetup>();
+            pManager = myPlayer.GetComponent<PlayerManager>();
+            break;
          }
       }
    }
 
+   public PlayerManager GetMyPlayerManager()
+   {
+      return pManager;
+   }
+
+   public PlayerSetup GetMyPlayerSetup()
+   {
+      return pSetup;
+   }
 }
 

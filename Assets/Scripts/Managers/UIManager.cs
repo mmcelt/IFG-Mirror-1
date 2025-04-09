@@ -298,8 +298,8 @@ public class UIManager : Singleton<UIManager>
 
    void StartRemotePlayerUpdating()
    {
-      if (Room.GamePlayers.Count > 1)
-         StartCoroutine(UpdateRemotePlayerNamesRoutine());
+      //if (Room.GamePlayers.Count > 1)
+      //   StartCoroutine(UpdateRemotePlayerNamesRoutine());
    }
 
    IEnumerator UpdateRemotePlayerNamesRoutine()

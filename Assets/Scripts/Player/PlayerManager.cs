@@ -1,6 +1,7 @@
+using Mirror;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : NetworkBehaviour
 {	
    #region Fields & Properties
 

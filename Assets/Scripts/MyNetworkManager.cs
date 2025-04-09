@@ -148,9 +148,6 @@ public class MyNetworkManager : NetworkManager
       {
          GameObject playerSpawnSystemInstance = Instantiate(playerSpawnSystem);
          NetworkServer.Spawn(playerSpawnSystemInstance);
-
-         //GameObject gameDataManagerInstance = Instantiate(gameDataManagerPrefab);
-         //NetworkServer.Spawn(gameDataManagerInstance);
       }
    }
 

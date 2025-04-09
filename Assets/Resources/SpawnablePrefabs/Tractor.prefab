@@ -110,6 +110,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: cc32f88c424239641b7024f8476d3208, type: 3}
   - {fileID: 2800000, guid: f24dda61706ece748925e8d97af12e22, type: 3}
   farmerName: 
+  myPlayer: {fileID: 0}
 --- !u!114 &2346110248332881618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,6 +126,29 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
+  playerPositions: {fileID: 11400000, guid: 501386e7bae5b3d4da1e9d07b2f985ed, type: 2}
+  normalMoveSpeed: 0
+  directedMoveSpeed: 0
+  ludicrousSpeed: 0
+  shifterAnim: {fileID: 0}
+  closeupCam: {fileID: 0}
+  rearWheelTweeners: []
+  frontWheelTweeners: []
+  rearWheelDuration: 1
+  frontWheelDuration: 0.5
+  pManager: {fileID: 0}
+  pSetup: {fileID: 0}
+  tractor: {fileID: 4999794094966535909}
+  dragster: {fileID: 0}
+  spotLight: {fileID: 0}
+  myTractor: {fileID: 6262455482423362493}
+  followCam: {fileID: 0}
+  moveSpeed: 0
+  currentSpace: 0
+  targetSpace: 0
+  currentPosition: {x: 0, y: 0, z: 0}
+  currentTarget: {x: 0, y: 0, z: 0}
+  finalTarget: {x: 0, y: 0, z: 0}
 --- !u!1 &9022611071252105621
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,6 +556,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9022611071251943527}
   - component: {fileID: 9022611071258090169}
+  - component: {fileID: 6540592528035885386}
   m_Layer: 0
   m_Name: RightLight
   m_TagString: Untagged
@@ -616,6 +641,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &6540592528035885386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9022611071252131457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &9022611071252132793
 GameObject:
   m_ObjectHideFlags: 0
@@ -7251,6 +7299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9022611071251921359}
   - component: {fileID: 9022611071258136443}
+  - component: {fileID: 6531588332567459562}
   m_Layer: 0
   m_Name: LeftLight
   m_TagString: Untagged
@@ -7335,6 +7384,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &6531588332567459562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9022611071252276351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &9022611071252277389
 GameObject:
   m_ObjectHideFlags: 0

@@ -55,14 +55,10 @@ public class PlayerMove : NetworkBehaviour
    //	
    //}
 
-   void Start()
-   {
-      //uiManager = UIManager.Instance;
-      //gm = GameManager.Instance;
-      rb = GetComponent<Rigidbody>();
-      brain = Camera.main.GetComponent<CinemachineBrain>();
-      UpdateMyYearToAll();
-   }
+   //void Start()
+   //{
+
+   //}
 
    void OnTriggerEnter(Collider other)
    {
@@ -87,6 +83,21 @@ public class PlayerMove : NetworkBehaviour
 
          Debug.Log($"SPACE: {currentSpace}");
       }
+   }
+   #endregion
+
+   #region Mirror Callbacks
+
+   public override void OnStartAuthority()
+   {
+      //uiManager = UIManager.Instance;
+      //gm = GameManager.Instance;
+      rb = GetComponent<Rigidbody>();
+      brain = Camera.main.GetComponent<CinemachineBrain>();
+      pManager=myTractor.GetMyPlayerManager();
+      pSetup=myTractor.GetMyPlayerSetup();
+
+      UpdateMyYearToAll();
    }
    #endregion
 
