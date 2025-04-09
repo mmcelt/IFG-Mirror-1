@@ -35,6 +35,11 @@ public class Tractor : NetworkBehaviour
       //ChangeColor();
    }
 
+   public string GetFarmerName()
+   {
+      return farmerName;
+   }
+
    void ChangeColor()
    {
       Renderer[] renderers = GetComponentsInChildren<Renderer>();

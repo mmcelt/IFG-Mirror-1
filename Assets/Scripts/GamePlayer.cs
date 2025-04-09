@@ -59,6 +59,16 @@ public class GamePlayer : NetworkBehaviour
       borgDie = _borgDie;
    }
 
+   public string GetMyDisplayName()
+   {
+      return displayName;
+   }
+
+   public string GetMyFarmerName()
+   {
+      return farmerName;
+   }
+
    public int GetNOP()
    {
       return nop;

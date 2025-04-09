@@ -17,21 +17,22 @@ public class IFG
 
    //Colors
    public static Color Purple = new Color(0.5f, 0f, 0.5f);
+   public static Color GreyedOut = new Color(0.5943396f, 0.5943396f, 0.5943396f);
 
    //Crops / Equipment
-   public const string Hay = "Hay";
-   public const string Grain = "Grain";
-   public const string Fruit = "Fruit";
-   public const string Spuds = "Spuds";
-   public const string Cows = "Cow";
-   public const string Tractor = "Tractor";
-   public const string Harvester = "Harvester";
+   public const string HAY = "Hay";
+   public const string GRAIN = "Grain";
+   public const string FRUIT = "Fruit";
+   public const string SPUDS = "Spuds";
+   public const string COWS = "Cow";
+   public const string TRACTOR = "Tractor";
+   public const string HARVESTER = "Harvester";
 
    //Ranges
-   public const string Oxford = "Oxford";
-   public const string Targhee = "Targhee";
-   public const string LostRiver = "Lost River";
-   public const string Lemhi = "Lemhi";
+   public const string OXFORD = "Oxford";
+   public const string TARGHEE = "Targhee";
+   public const string LOST_RIVER = "Lost River";
+   public const string LEMHI = "Lemhi";
 
    //Harvests
    public const string HayH = "Hay";
@@ -42,6 +43,7 @@ public class IFG
    public const string AppleH = "Apples";
    public const string CornH = "Corn";
 
+   //Methods
    public static int GetIndexFromFarmer(string farmer)
    {
       switch (farmer)
@@ -84,6 +86,48 @@ public class IFG
             Debug.LogWarning($"FURAR Farmer: {farmer}");
             return Color.cyan;
       }
+   }
+
+   public static int LoadedDie(int die)
+   {
+      if (Input.GetKey(KeyCode.Alpha1))
+      {
+         return 1;
+      }
+      if (Input.GetKey(KeyCode.Alpha2))
+      {
+         return 2;
+      }
+      if (Input.GetKey(KeyCode.Alpha3))
+      {
+         return 3;
+      }
+      if (Input.GetKey(KeyCode.Alpha4))
+      {
+         return 4;
+      }
+      if (Input.GetKey(KeyCode.Alpha5))
+      {
+         return 5;
+      }
+      if (Input.GetKey(KeyCode.Alpha6))
+      {
+         return 6;
+      }
+      if (Input.GetKey(KeyCode.Alpha7))
+      {
+         return 7;
+      }
+      if (Input.GetKey(KeyCode.Alpha8))
+      {
+         return 8;
+      }
+      if (Input.GetKey(KeyCode.Alpha9))
+      {
+         return 9;
+      }
+
+      return die;
    }
 
    #region Enums
