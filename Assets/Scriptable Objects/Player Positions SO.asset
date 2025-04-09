@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b639a9d3ecfdd9f4f875e4d747a8f632, type: 3}
   m_Name: Player Positions SO
   m_EditorClassIdentifier: 
-  ron00: {x: -60, y: 0, z: 69.5}
-  jan00: {x: -60, y: 0, z: 64.5}
-  jer00: {x: -60, y: 0, z: 59.5}
-  ric00: {x: -67.5, y: 0, z: 69.5}
-  bec00: {x: -67.5, y: 0, z: 64.5}
-  mik00: {x: -67.5, y: 0, z: 59.5}
+  ronPos00: {x: -60, y: 0, z: 69.5}
+  janPos00: {x: -60, y: 0, z: 64.5}
+  jerPos00: {x: -60, y: 0, z: -59.5}
+  ricPos00: {x: -67.5, y: 0, z: 69.5}
+  becPos00: {x: -67.5, y: 0, z: 64.5}
+  mikPos00: {x: -67.5, y: 0, z: 59.5}
   ronPos01: {x: 0, y: 0, z: 0}
   janPos01: {x: 0, y: 0, z: 0}
   jerPos01: {x: 0, y: 0, z: 0}

@@ -51,17 +51,17 @@ public class PlayerSpawnSystem : NetworkBehaviour
       switch (farmer)
       {
          case IFG.RON:
-            return spawnpoints.ron00;
+            return spawnpoints.ronPos00;
          case IFG.JANIS:
-            return spawnpoints.jan00;
+            return spawnpoints.janPos00;
          case IFG.JERRY:
-            return spawnpoints.jer00;
+            return spawnpoints.jerPos00;
          case IFG.RIC:
-            return spawnpoints.ric00;
+            return spawnpoints.ricPos00;
          case IFG.MIKE:
-            return spawnpoints.mik00;
+            return spawnpoints.mikPos00;
          case IFG.BECKY:
-            return spawnpoints.bec00;
+            return spawnpoints.becPos00;
          default:
             return Vector3.zero;
       }

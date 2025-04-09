@@ -1,0 +1,7 @@
+ID,Name,DisplayName,Rarity,DurabilityFunction,BaseValue,RepairCost,CraftingCost,Type
+0,RustySword,rostiges Schwert,Uncommon,Linear,150,-1,-1,Sword
+1,GreenApple,grüner Apfel,Common,None,50,-1,-1,Food
+2,ShinyArmor,glänzende Rüstung,Legendary,SmoothStartStop,1000,-1,-1,Armor
+3,HuntingBow,Jagdbogen,Rare,SmoothStart,400,-1,-1,Bow
+4,HealingPotion,Heiltrank,Epic,SmoothStop,200,-1,-1,Potions
+5,OakWood,Eichenholz,Uncommon,None,100,-1,-1,Wood

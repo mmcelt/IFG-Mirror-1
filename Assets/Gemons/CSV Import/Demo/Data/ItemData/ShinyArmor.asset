@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ac203f3d90a1e469a9f47a07f6c993, type: 3}
+  m_Name: ShinyArmor
+  m_EditorClassIdentifier: 
+  Name: ShinyArmor
+  ID: 2
+  DisplayName: "gl\xE4nzende R\xFCstung"
+  DurabilityFunction: SmoothStartStop
+  BaseValue: 1000
+  RepairCost: -1
+  CraftingCost: -1
+  Image: {fileID: -7525172804116771214, guid: b4a831b8f94b44d47be3a24503ef628d, type: 3}
+  ItemType: 1
+  ItemRarity: 5

@@ -8,12 +8,12 @@ public class PlayerPositionsSO : ScriptableObject
 {
    #region Fields & Properties
 
-   public Vector3 ron00;
-   public Vector3 jan00;
-   public Vector3 jer00;
-   public Vector3 ric00;
-   public Vector3 bec00;
-   public Vector3 mik00;
+   public Vector3 ronPos00;
+   public Vector3 janPos00;
+   public Vector3 jerPos00;
+   public Vector3 ricPos00;
+   public Vector3 becPos00;
+   public Vector3 mikPos00;
    [Space]
    public Vector3 ronPos01;
    public Vector3 janPos01;
