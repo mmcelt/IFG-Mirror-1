@@ -1,3 +1,4 @@
+using Mirror;
 using UnityEngine;
 
 public class OTBCard
@@ -24,7 +25,7 @@ public class OECard
    public bool bottomCard;
 }
 
-public class DeckManager : MonoBehaviour
+public class DeckManager : NetworkBehaviour
 {	
    #region Fields & Properties
 
