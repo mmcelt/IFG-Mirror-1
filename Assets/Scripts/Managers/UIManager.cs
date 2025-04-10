@@ -311,12 +311,12 @@ public class UIManager : Singleton<UIManager>
          int index = 0;
          foreach (var player in Room.GamePlayers)
          {
-            if (player.GetMyDisplayName() != myPlayer.GetMyDisplayName())
+            if (player.GetDisplayName() != myPlayer.GetDisplayName())
             {
-               Debug.Log($"In IF: {player.GetMyDisplayName()}");
+               Debug.Log($"In IF: {player.GetDisplayName()}");
 
-               opNames[index].text = player.GetMyDisplayName();
-               opNetworthNames[index].text = player.GetMyDisplayName();
+               opNames[index].text = player.GetDisplayName();
+               opNetworthNames[index].text = player.GetDisplayName();
 
                if (player.GetFarmerName() != null)
                {
@@ -342,7 +342,7 @@ public class UIManager : Singleton<UIManager>
 
          foreach (var player in Room.GamePlayers)
          {
-            Debug.Log($"UIM: {player.GetMyDisplayName()}");
+            Debug.Log($"UIM: {player.GetDisplayName()}");
          }
 
          yield return new WaitForSeconds(0.5f);

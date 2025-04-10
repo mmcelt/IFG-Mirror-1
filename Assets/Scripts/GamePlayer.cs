@@ -59,7 +59,7 @@ public class GamePlayer : NetworkBehaviour
       borgDie = _borgDie;
    }
 
-   public string GetMyDisplayName()
+   public string GetDisplayName()
    {
       return displayName;
    }

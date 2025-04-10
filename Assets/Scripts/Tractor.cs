@@ -11,8 +11,8 @@ public class Tractor : NetworkBehaviour
 
    public GamePlayer myPlayer;   //TODO: PUBLIC 4 TESTING
 
-   PlayerSetup pSetup;
-   PlayerManager pManager;
+   [SerializeField] PlayerSetup pSetup;
+   [SerializeField] PlayerManager pManager;
 
    #endregion
 
@@ -39,12 +39,13 @@ public class Tractor : NetworkBehaviour
    void GetMyGamePlayerStuff()
    {
       GamePlayer[] gamePlayers = GameObject.FindObjectsOfType<GamePlayer>();
+
       foreach (GamePlayer player in gamePlayers)
       {
          if (player.isOwned)
          {
             myPlayer = player;
-            pSetup=myPlayer.GetComponent<PlayerSetup>();
+            pSetup = myPlayer.GetComponent<PlayerSetup>();
             pManager = myPlayer.GetComponent<PlayerManager>();
             break;
          }

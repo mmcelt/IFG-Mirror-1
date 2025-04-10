@@ -91,6 +91,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   playerUI: {fileID: 8275352456908014113}
+  player: {fileID: -2559933228053063837}
 --- !u!114 &4619240525505828295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,6 +107,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
+  player: {fileID: -2559933228053063837}
 --- !u!1001 &1392770914480980247
 PrefabInstance:
   m_ObjectHideFlags: 0

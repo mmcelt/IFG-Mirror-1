@@ -2,28 +2,19 @@ using Mirror;
 using UnityEngine;
 
 public class PlayerManager : NetworkBehaviour
-{	
+{
    #region Fields & Properties
 
+   [SerializeField] GamePlayer player;
 
    #endregion
 
-   #region Unity Callbacks
+   #region Mirror Callbacks
 
-   //void Awake() 
-   //{
-   //	
-   //}
-
-   //void Start() 
-   //{
-   //	
-   //}
-
-   //void Update() 
-   //{
-   //	
-   //}
+   public override void OnStartAuthority()
+   {
+      
+   }
    #endregion
 
 }
