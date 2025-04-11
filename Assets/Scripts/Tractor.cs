@@ -5,10 +5,7 @@ public class Tractor : NetworkBehaviour
 {
    #region Fields & Properties
 
-   [SerializeField] Texture[] textures;
-
    public string farmerName;     //TODO: PUBLIC 4 TESTING
-
    public GamePlayer myPlayer;   //TODO: PUBLIC 4 TESTING
 
    [SerializeField] PlayerSetup pSetup;

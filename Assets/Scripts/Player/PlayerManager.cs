@@ -8,27 +8,27 @@ public class PlayerManager : NetworkBehaviour
    [SerializeField] GamePlayer player;
 
    [SyncVar]
-   int cash;
+   [SerializeField] int cash;
    [SyncVar]
-   int notes;
+   [SerializeField] int notes;
    [SyncVar]
-   int networth;
+   [SerializeField] int networth;
    [SyncVar]
-   int hay;
+   [SerializeField] int hay;
    [SyncVar]
-   int grain;
+   [SerializeField] int grain;
    [SyncVar]
-   int fruit;
+   [SerializeField] int fruit;
    [SyncVar]
-   int spuds;
+   [SerializeField] int spuds;
    [SyncVar]
-   int fCows;
+   [SerializeField] int fCows;
    [SyncVar]
-   int rCows;
+   [SerializeField] int rCows;
    [SyncVar]
-   bool tractor;
+   [SerializeField] bool tractor;
    [SyncVar]
-   bool harvester;
+   [SerializeField] bool harvester;
 
    #endregion
 

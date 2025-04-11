@@ -61,7 +61,7 @@ public class RoomPlayer : NetworkBehaviour
    //[ServerCallback]
    void Update()
    {
-      Debug.Log($"Update: {Room.RoomPlayers.Count}::{Nop}");
+      //Debug.Log($"Update: {Room.RoomPlayers.Count}::{Nop}");
       lockInButton.gameObject.SetActive(Room.RoomPlayers.Count == Nop);
    }
 

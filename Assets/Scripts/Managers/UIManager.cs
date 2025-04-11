@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : Singleton<UIManager>
+public class UIManager : SingletonMirror<UIManager>
 {
    #region Fields & Properties
 
@@ -80,12 +80,11 @@ public class UIManager : Singleton<UIManager>
    public GameObject buttonsModalPanel;
    [Header("MISC")]
    [SerializeField] GamePlayer myPlayer;
+   [SerializeField] Tractor myTractor;
    //[SerializeField] InputFieldManager ifManager;
    [SerializeField] Material normalMat, outlineMat;
    public PlayerManager pManager;
    [SerializeField] PlayerMove pMove;
-
-
 
    MyNetworkManager room;
    MyNetworkManager Room
@@ -100,20 +99,11 @@ public class UIManager : Singleton<UIManager>
 
    #endregion
 
-   #region Unity Callbacks
+   #region Mirror Callbacks
 
-   void OnEnable()
+   public override void OnStartAuthority()
    {
-      //OTBListItemRenderer.OtbCardSelected += OnOtbCardSelected;
-   }
-
-   void OnDisable()
-   {
-      //OTBListItemRenderer.OtbCardSelected -= OnOtbCardSelected;
-   }
-
-   void Start()
-   {
+      StartCoroutine(SetMyPlayersRoutine());
       Invoke(nameof(StartRemotePlayerUpdating), 0.5f);
    }
 
@@ -132,12 +122,14 @@ public class UIManager : Singleton<UIManager>
       farmerNameText.color = IFG.GetColorFromFarmer(farmerName);
    }
 
-   //public void SetMyPlayers()
-   //{
-   //   pManager = myPlayer.GetComponent<PlayerManager>();
-   //   pManager.uiManager = this;
-   //   pMove = player.GetComponent<PlayerMove>();
-   //}
+   IEnumerator SetMyPlayersRoutine()
+   {
+      yield return new WaitForSeconds(0.2f);
+      myPlayer = GetComponentInParent<GamePlayer>();
+      pManager = myPlayer.GetComponent<PlayerManager>();
+      myTractor = myPlayer.GetMyTractor();
+      pMove = myTractor.GetComponent<PlayerMove>();
+   }
 
    public PlayerManager GetMyPlayer()
    {
@@ -149,7 +141,7 @@ public class UIManager : Singleton<UIManager>
 
    public void OnTestButtonClick()
    {
-      myPlayer.GetComponent<PlayerMove>().DirectedMove(19);
+      pMove.InitMove(1);
    }
 
    public void OnRollButtonClick()
@@ -298,8 +290,9 @@ public class UIManager : Singleton<UIManager>
 
    void StartRemotePlayerUpdating()
    {
-      //if (Room.GamePlayers.Count > 1)
-      //   StartCoroutine(UpdateRemotePlayerNamesRoutine());
+      //Debug.Log("In RU Call");
+      if (Room.GamePlayers.Count > 1)
+         StartCoroutine(UpdateRemotePlayerNamesRoutine());
    }
 
    IEnumerator UpdateRemotePlayerNamesRoutine()

@@ -18,6 +18,7 @@ public class PlayerSetup : NetworkBehaviour
       UIManager.Instance.SetPlayerName(player.GetDisplayName());
       UIManager.Instance.SetFarmerName(player.GetFarmerName());
    }
+
    #endregion
 
 }

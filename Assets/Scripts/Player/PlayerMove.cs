@@ -50,16 +50,6 @@ public class PlayerMove : NetworkBehaviour
 
    #region Unity Callbacks
 
-   //void Awake() 
-   //{
-   //	
-   //}
-
-   //void Start()
-   //{
-
-   //}
-
    void OnTriggerEnter(Collider other)
    {
       int thisSpace;
@@ -94,8 +84,8 @@ public class PlayerMove : NetworkBehaviour
       //gm = GameManager.Instance;
       rb = GetComponent<Rigidbody>();
       brain = Camera.main.GetComponent<CinemachineBrain>();
-      pManager=myTractor.GetMyPlayerManager();
-      pSetup=myTractor.GetMyPlayerSetup();
+      pManager = myTractor.GetMyPlayerManager();
+      pSetup = myTractor.GetMyPlayerSetup();
 
       UpdateMyYearToAll();
    }
@@ -106,18 +96,18 @@ public class PlayerMove : NetworkBehaviour
    {
       die = _die;
 
-      //Debug.Log($"InitMove: in-{_die}::out-{die}");
+      Debug.Log($"InitMove: in-{_die}::out-{die}");
       //die = 37;	//TESTING
 
-//#if UNITY_EDITOR
+#if UNITY_EDITOR
       die = IFG.LoadedDie(die);
-//#endif
+#endif
 
       moveSpeed = normalMoveSpeed;
 
       currentPosition = transform.position;
 
-      ToggleSpotLight(true);
+      //ToggleSpotLight(true);
 
       if (die == -9)
          StartCoroutine(ReverseRoutine());
@@ -148,6 +138,7 @@ public class PlayerMove : NetworkBehaviour
       endSpace = currentSpace + die;
 
       //setup the move...
+
       //find finalTarget
       targetSpace = endSpace;
       GetMyTargetPosition();
@@ -166,8 +157,8 @@ public class PlayerMove : NetworkBehaviour
       RunTheRoute();
 
       //pSetup.GetLocalPlayerIndicator().SetActive(false); ;
-      followCam.Priority = 15;
-      ToggleSpotLight(true);
+      //followCam.Priority = 15;
+      //ToggleSpotLight(true);
 
       yield return null;
 
@@ -194,14 +185,14 @@ public class PlayerMove : NetworkBehaviour
       else
          //AudioManager.Instance.PlaySound(5);
 
-      RpcPlayerRemoteMoveSound();
+         RpcPlayerRemoteMoveSound();
 
       if (die >= 1 && die <= 3)
          brain.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.Cut;
       else
          brain.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.EaseInOut;
 
-      //Debug.Log($"In MR B4 while loop: {die}==:{finalTarget}");
+      Debug.Log($"In MR B4 while loop: {die}==:{finalTarget}");
 
       while (transform.position != finalTarget)
       {
@@ -218,7 +209,7 @@ public class PlayerMove : NetworkBehaviour
          yield return null;
       }
 
-      //Debug.Log($"Out of loop: {transform.position}:{finalTarget}");
+      Debug.Log($"Out of loop: {transform.position}:{finalTarget}");
 
       initialSpot = false;
       finalTarget = Vector3.zero;
@@ -226,7 +217,7 @@ public class PlayerMove : NetworkBehaviour
       route.Clear();
       dragster.SetActive(false);
       tractor.SetActive(true);
-      followCam.Priority = 5;
+      //followCam.Priority = 5;
       //pSetup.GetLocalPlayerIndicator().SetActive(true); ;
       moveSpeed = normalMoveSpeed;
       //AudioManager.Instance.StopAllSources();
@@ -234,7 +225,7 @@ public class PlayerMove : NetworkBehaviour
       RpcStopRemotePlayerMoveSound();
       usingDragster = false;
 
-      ToggleSpotLight(false);
+      //ToggleSpotLight(false);
 
       foreach (var tweener in rearWheelTweeners)
       {
@@ -248,7 +239,7 @@ public class PlayerMove : NetworkBehaviour
          tweener.DOPause();
       }
 
-      //EndOfMove();
+      EndOfMove();
    }
 
    [ClientRpc(includeOwner = false)]
@@ -274,22 +265,22 @@ public class PlayerMove : NetworkBehaviour
          if (i == 14 && currentSpace != 14)
          {
             waypoints.Enqueue(i);
-            //Debug.Log($"Waypoint at: {i}");
+            Debug.Log($"Waypoint at: {i}");
          }
          if (i == 25 && currentSpace != 25)
          {
             waypoints.Enqueue(i);
-            //Debug.Log($"Waypoint at: {i}");
+            Debug.Log($"Waypoint at: {i}");
          }
          if (i == 36 && currentSpace != 36)
          {
             waypoints.Enqueue(i);
-           //Debug.Log($"Waypoint at: {i}");
+            Debug.Log($"Waypoint at: {i}");
          }
          if (i == 50 && currentSpace != 50)
          {
             waypoints.Enqueue(i);
-            //Debug.Log($"Waypoint at: {i}");
+            Debug.Log($"Waypoint at: {i}");
          }
       }
    }
@@ -303,13 +294,13 @@ public class PlayerMove : NetworkBehaviour
             int nextTarget = waypoints.Dequeue();
             route.Enqueue(nextTarget);
 
-            //Debug.Log($"In BuildRoute WP: {nextTarget}");
+            Debug.Log($"In BuildRoute WP: {nextTarget}");
          }
       }
       //just straight move to endpoint
       route.Enqueue(endSpace);
 
-      //Debug.Log($"ROUTE WAYPOINTS: {route.Count}");
+      Debug.Log($"ROUTE WAYPOINTS: {route.Count}");
    }
 
    void RunTheRoute()
@@ -850,7 +841,7 @@ public class PlayerMove : NetworkBehaviour
       ToggleSpotLight(false);
       //pSetup.GetLocalPlayerIndicator().SetActive(true); ;
 
-      //EndOfMove();
+      EndOfMove();
    }
 
    //void EndOfYearResets()
@@ -926,11 +917,11 @@ public class PlayerMove : NetworkBehaviour
    //      gm.pManager.HandleCommodityDoubled(IFG.Lemhi, false);
    //}
 
-   //void EndOfMove()
-   //{
-   //   BoardManager.Instance.ShowSpace(currentSpace);
-   //   uiManager.endTurnButton.interactable = true;
-   //}
+   void EndOfMove()
+   {
+      //BoardManager.Instance.ShowSpace(currentSpace);
+      //uiManager.endTurnButton.interactable = true;
+   }
 
    public void ResetCowCounter()
    {

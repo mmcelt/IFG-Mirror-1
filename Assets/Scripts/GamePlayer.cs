@@ -11,6 +11,8 @@ public class GamePlayer : NetworkBehaviour
    [SerializeField] string displayName = "Not Set...";
    [SyncVar]
    [SerializeField] string farmerName = "Not Set";
+   [SyncVar]
+   [SerializeField] Tractor tractor;
 
    //game info
    [SerializeField] int nop;
@@ -18,6 +20,7 @@ public class GamePlayer : NetworkBehaviour
    [SerializeField] int networthAmount;
    [SerializeField] float timedLength;
    [SerializeField] bool borgDie;
+
 
    MyNetworkManager room;
 
@@ -94,6 +97,10 @@ public class GamePlayer : NetworkBehaviour
       return borgDie;
    }
 
+   public Tractor GetMyTractor()
+   {
+      return tractor;
+   }
    #endregion
 
    #region Mirror Callbacks
@@ -134,6 +141,11 @@ public class GamePlayer : NetworkBehaviour
       farmerName = newName;
    }
 
+   [Server]
+   public void SetMyTractor(Tractor _tractor)
+   {
+      tractor = _tractor;
+   }
    #endregion
 
    #region Client

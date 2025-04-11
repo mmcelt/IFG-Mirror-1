@@ -43,6 +43,8 @@ public class PlayerSpawnSystem : NetworkBehaviour
 
       GameObject tractorInstance = Instantiate(tractorPrefabs[IFG.GetIndexFromFarmer(farmerName)], spawnpoint, Quaternion.Euler(0, 90, 0));
 
+      conn.identity.GetComponent<GamePlayer>().SetMyTractor(tractorInstance.GetComponent<Tractor>());
+
       NetworkServer.Spawn(tractorInstance, conn);
    }
 
