@@ -1,4 +1,5 @@
 using Mirror;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManager : NetworkBehaviour
@@ -29,15 +30,18 @@ public class PlayerManager : NetworkBehaviour
    [SerializeField] bool tractor;
    [SyncVar]
    [SerializeField] bool harvester;
+   [SyncVar]
+   [SerializeField] int otbCount;
+
+   bool initialCards = true;
+
+   List<OTBCard> myOTBs = new List<OTBCard>();
 
    #endregion
 
    #region Mirror Callbacks
 
-   public override void OnStartAuthority()
-   {
-      
-   }
+
    #endregion
 
    #region Client
@@ -151,6 +155,30 @@ public class PlayerManager : NetworkBehaviour
    {
       return harvester;
    }
+
+   public void DrawOTBCard()
+   {
+      DeckManager.Instance.DrawOTBCard(gameObject);
+   }
+
+   public void ReceiveOTBCard(OTBCard drawnCard)
+   {
+      drawnCard.bottomCard = false;
+      myOTBs.Add(drawnCard);
+      //Debug.Log($"Got card: {drawnCard.cardNumber}::{myOTBs.Count}");
+
+      CmdUpateMyOtbCount(myOTBs.Count);
+
+      if (initialCards && myOTBs.Count == 2)
+      {
+         initialCards = false;
+         return;
+      }
+      else if (!initialCards)
+      {
+         //StartCoroutine(ShowOtbCardRoutine(drawnCard));
+      }
+   }
    #endregion
 
    #region Server
@@ -220,6 +248,14 @@ public class PlayerManager : NetworkBehaviour
    {
       harvester = owned;
    }
+
+   [Command]
+   void CmdUpateMyOtbCount(int amount)
+   {
+      Debug.Log($"InCMD: {amount}");
+      otbCount = amount;
+   }
+
    #endregion
 }
 

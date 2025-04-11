@@ -1,17 +1,17 @@
 using Mirror;
 using UnityEngine;
 
-public class SingletonMirror<T> : NetworkBehaviour where T : MonoBehaviour
+public class SingletonMirror<T> : NetworkBehaviour where T : NetworkBehaviour
 {
    #region Fields & Properties
 
-   static T _instance;
+   static T instance;
 
    public static T Instance
    {
       get
       {
-         return _instance;
+         return instance;
       }
    }
    #endregion
@@ -20,8 +20,8 @@ public class SingletonMirror<T> : NetworkBehaviour where T : MonoBehaviour
 
    protected virtual void Awake()
    {
-      if (_instance == null)
-         _instance = this as T;
+      if (instance == null)
+         instance = this as T;
       else
       {
          Destroy(gameObject);

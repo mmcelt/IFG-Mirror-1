@@ -609,9 +609,11 @@ MonoBehaviour:
     type: 3}
   gamePlayerPrefab: {fileID: -2559933228053063837, guid: 84ac66dbab3786743bffa31790a06957,
     type: 3}
-  playerSpawnSystem: {fileID: 6857085770860115021, guid: 30286d4e666de5c458805b277cb93050,
+  playerSpawnSystemPrefab: {fileID: 6857085770860115021, guid: 30286d4e666de5c458805b277cb93050,
     type: 3}
-  gameDataManagerPrefab: {fileID: 3422175705444766023, guid: 2bbc876f59188fe4ea769c1dc72c6943,
+  gameManagerPrefab: {fileID: 37836617600311809, guid: 3234cf38b0a6c9e439f2e05a72946162,
+    type: 3}
+  deckManagerPrefab: {fileID: 3194091531893701119, guid: 20206c56e825e34409d524770d48f9ae,
     type: 3}
   GameType: 0
   NetworthAmount: 0

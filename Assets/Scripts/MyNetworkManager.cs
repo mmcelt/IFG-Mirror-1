@@ -15,8 +15,9 @@ public class MyNetworkManager : NetworkManager
    [SerializeField] RoomPlayer roomPlayerPrefab;
    [Header("Game")]
    [SerializeField] GamePlayer gamePlayerPrefab;
-   [SerializeField] GameObject playerSpawnSystem;
-   [SerializeField] GameObject gameDataManagerPrefab;
+   [SerializeField] GameObject playerSpawnSystemPrefab;
+   [SerializeField] GameObject gameManagerPrefab;
+   [SerializeField] GameObject deckManagerPrefab;
 
    public static Action OnClientConnected;
    public static Action OnClientDisconnected;
@@ -146,8 +147,14 @@ public class MyNetworkManager : NetworkManager
    {
       if (sceneName == gameScene)
       {
-         GameObject playerSpawnSystemInstance = Instantiate(playerSpawnSystem);
+         GameObject playerSpawnSystemInstance = Instantiate(playerSpawnSystemPrefab);
          NetworkServer.Spawn(playerSpawnSystemInstance);
+
+         GameObject deckManagerInstnace=Instantiate(deckManagerPrefab);
+         NetworkServer.Spawn(deckManagerInstnace);
+
+         GameObject gameManagerInstance=Instantiate(gameManagerPrefab);
+         NetworkServer.Spawn(gameManagerInstance);
       }
    }
 

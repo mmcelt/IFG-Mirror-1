@@ -648,9 +648,11 @@ GameObject:
   - component: {fileID: 7166392913542206135}
   - component: {fileID: 1145940525329587042}
   - component: {fileID: 3286316135621803585}
-  - component: {fileID: 6262455482423362493}
-  - component: {fileID: 2346110248332881618}
   - component: {fileID: 3643596631118137099}
+  - component: {fileID: 6262455482423362493}
+  - component: {fileID: -7461066171972701340}
+  - component: {fileID: 2346110248332881618}
+  - component: {fileID: 6997879086110404431}
   m_Layer: 0
   m_Name: Tractor
   m_TagString: Player
@@ -753,6 +755,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &3643596631118137099
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4999794094966535909}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 1, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6262455482423362493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,6 +795,33 @@ MonoBehaviour:
   myPlayer: {fileID: 0}
   pSetup: {fileID: 0}
   pManager: {fileID: 0}
+--- !u!114 &-7461066171972701340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4999794094966535909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841169d3e63dd39489c18ac65ab57f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  player: {fileID: 0}
+  cash: 0
+  notes: 0
+  networth: 0
+  hay: 0
+  grain: 0
+  fruit: 0
+  spuds: 0
+  fCows: 0
+  rCows: 0
+  tractor: 0
+  harvester: 0
 --- !u!114 &2346110248332881618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -814,27 +864,18 @@ MonoBehaviour:
   currentPosition: {x: 0, y: 0, z: 0}
   currentTarget: {x: 0, y: 0, z: 0}
   finalTarget: {x: 0, y: 0, z: 0}
---- !u!65 &3643596631118137099
-BoxCollider:
+--- !u!114 &6997879086110404431
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4999794094966535909}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.5, y: 1, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6757badbc67148c4c8405529e831a967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5329854993589259492
 GameObject:
   m_ObjectHideFlags: 0

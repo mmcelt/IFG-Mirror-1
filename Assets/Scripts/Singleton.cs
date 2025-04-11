@@ -4,13 +4,13 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
    #region Fields
 
-   static T _instance;
+   static T instance;
 
    public static T Instance
    {
       get
       {
-         return _instance;
+         return instance;
       }
    }
    #endregion
@@ -19,8 +19,8 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
    protected virtual void Awake()
    {
-      if (_instance == null)
-         _instance = this as T;
+      if (instance == null)
+         instance = this as T;
       else
       {
          Destroy(gameObject);
