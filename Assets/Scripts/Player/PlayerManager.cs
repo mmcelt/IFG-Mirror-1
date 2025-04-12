@@ -30,7 +30,7 @@ public class PlayerManager : NetworkBehaviour
    [SerializeField] bool tractor;
    [SyncVar]
    [SerializeField] bool harvester;
-   [SyncVar]
+   [SyncVar(hook = nameof(HandleOtbCountChanged))]
    [SerializeField] int otbCount;
 
    bool initialCards = true;
@@ -45,6 +45,11 @@ public class PlayerManager : NetworkBehaviour
    #endregion
 
    #region Client
+
+   void HandleOtbCountChanged(int oldValue, int newValue)
+   {
+      UIManager.Instance.UpdateMyOtbCountText(otbCount);
+   }
 
    public void UpdateMyCash(int amount)
    {
