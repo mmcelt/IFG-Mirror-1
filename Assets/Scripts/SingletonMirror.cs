@@ -1,5 +1,4 @@
 using Mirror;
-using UnityEngine;
 
 public class SingletonMirror<T> : NetworkBehaviour where T : NetworkBehaviour
 {

@@ -44,6 +44,8 @@ public class GameManager : SingletonMirror<GameManager>
 
    IEnumerator GameLoopRoutine()
    {
+      yield return new WaitForSeconds(0.1f);
+      //yield return null;
       yield return StartCoroutine(PregameSetupRoutine());
       
    }
@@ -64,7 +66,7 @@ public class GameManager : SingletonMirror<GameManager>
          foreach (var player in Room.GamePlayers)
          {
             Debug.Log($"In Give OTB's: {player.name}");
-            player.GetComponent<PlayerManager>().DrawOTBCard();
+            DeckManager.Instance.DrawOTBCard(player.gameObject);
          }
       }
    }

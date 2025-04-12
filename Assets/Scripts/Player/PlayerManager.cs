@@ -158,7 +158,7 @@ public class PlayerManager : NetworkBehaviour
 
    public void DrawOTBCard()
    {
-      DeckManager.Instance.DrawOTBCard(gameObject);
+      CmdDrawOTBCard();
    }
 
    public void ReceiveOTBCard(OTBCard drawnCard)
@@ -256,6 +256,11 @@ public class PlayerManager : NetworkBehaviour
       otbCount = amount;
    }
 
+   [Command]
+   void CmdDrawOTBCard()
+   {
+      DeckManager.Instance.DrawOTBCard(gameObject);
+   }
    #endregion
 }
 

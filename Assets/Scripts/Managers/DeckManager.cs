@@ -367,7 +367,7 @@ public class DeckManager : SingletonMirror<DeckManager>
 
    public void DrawOTBCard(GameObject target)
    {
-      Debug.Log($"Called PM.DrawOTBCard: {target.name}");
+      //Debug.Log($"Called PM.DrawOTBCard: {target.GetComponent<GamePlayer>().GetDisplayName()}");
 
       NetworkIdentity conn = target.GetComponent<NetworkIdentity>();
 
@@ -375,12 +375,13 @@ public class DeckManager : SingletonMirror<DeckManager>
       otbCards.Remove(drawnCard);
 
       TargetGiveOTBCard(conn.connectionToClient, target, drawnCard);
+      //Debug.Log("Past TRPC!");
    }
 
    [TargetRpc]
-   public void TargetGiveOTBCard(NetworkConnectionToClient target, GameObject go, OTBCard card)
+   void TargetGiveOTBCard(NetworkConnectionToClient target, GameObject go, OTBCard card)
    {
-      Debug.Log($"In TRPC: {card.cardNumber}");
+      //Debug.Log($"In TRPC: {card.cardNumber}");
 
       go.GetComponent<PlayerManager>().ReceiveOTBCard(card);
    }
