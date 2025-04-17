@@ -124,10 +124,11 @@ public class UIManager : SingletonMirror<UIManager>
 
    IEnumerator SetMyPlayersRoutine()
    {
-      yield return new WaitForSeconds(0.2f);
+      yield return new WaitForSeconds(0.3f);
       myPlayer = GetComponentInParent<GamePlayer>();
       pManager = myPlayer.GetComponent<PlayerManager>();
       myTractor = myPlayer.GetMyTractor();
+      Debug.Log($"My Trctor: {myTractor}");
       pMove = myTractor.GetComponent<PlayerMove>();
    }
 
