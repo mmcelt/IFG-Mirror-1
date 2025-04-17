@@ -8,8 +8,8 @@ public class StickerLocationsSO : ScriptableObject
    #region Fields & Properties
 
    //Ron's farm
-   public Vector3 ronHarvester;
    public Vector3 ronTractor;
+   public Vector3 ronHarvester;
    public Vector3 ronHay;
    public Vector3 ronGrain;
    public Vector3 ronFruit;
@@ -17,8 +17,8 @@ public class StickerLocationsSO : ScriptableObject
    public Vector3 ronFarmCows;
    [Space]
    //Janis' farm
-   public Vector3 janHarvester;
    public Vector3 janTractor;
+   public Vector3 janHarvester;
    public Vector3 janHay;
    public Vector3 janGrain;
    public Vector3 janFruit;
@@ -26,8 +26,8 @@ public class StickerLocationsSO : ScriptableObject
    public Vector3 janFarmCows;
    [Space]
    //Jerry's farm
-   public Vector3 jerHarvester;
    public Vector3 jerTractor;
+   public Vector3 jerHarvester;
    public Vector3 jerHay;
    public Vector3 jerGrain;
    public Vector3 jerFruit;
@@ -35,8 +35,8 @@ public class StickerLocationsSO : ScriptableObject
    public Vector3 jerFarmCows;
    [Space]
    //Ric's farm
-   public Vector3 ricHarvester;
    public Vector3 ricTractor;
+   public Vector3 ricHarvester;
    public Vector3 ricHay;
    public Vector3 ricGrain;
    public Vector3 ricFruit;
@@ -44,8 +44,8 @@ public class StickerLocationsSO : ScriptableObject
    public Vector3 ricFarmCows;
    [Space]
    //Becky's Farm
-   public Vector3 becHarvester;
    public Vector3 becTractor;
+   public Vector3 becHarvester;
    public Vector3 becHay;
    public Vector3 becGrain;
    public Vector3 becFruit;
@@ -53,8 +53,8 @@ public class StickerLocationsSO : ScriptableObject
    public Vector3 becFarmCows;
    [Space]
    //Mike's farm
-   public Vector3 mikHarvester;
    public Vector3 mikTractor;
+   public Vector3 mikHarvester;
    public Vector3 mikHay;
    public Vector3 mikGrain;
    public Vector3 mikFruit;
