@@ -91,6 +91,8 @@ public class PlayerMove : NetworkBehaviour
    }
    #endregion
 
+   #region Client
+
    //called from the RollButton
    public void InitMove(int _die)
    {
@@ -185,7 +187,8 @@ public class PlayerMove : NetworkBehaviour
       else
          //AudioManager.Instance.PlaySound(5);
 
-         RpcPlayerRemoteMoveSound();
+         CmdPlayerRemoteMoveSound();
+         
 
       if (die >= 1 && die <= 3)
          brain.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.Cut;
@@ -222,7 +225,7 @@ public class PlayerMove : NetworkBehaviour
       moveSpeed = normalMoveSpeed;
       //AudioManager.Instance.StopAllSources();
       //AudioManager.Instance.Sources[20].pitch = 1.28f;
-      RpcStopRemotePlayerMoveSound();
+      CmdStopRemotePlayerMoveSound();
       usingDragster = false;
 
       //ToggleSpotLight(false);
@@ -765,7 +768,7 @@ public class PlayerMove : NetworkBehaviour
       //uiManager.endTurnButton.interactable = false;
       //AudioManager.Instance.PlaySound(21);
 
-      RpcPlayerRemoteMoveSound();
+      CmdPlayerRemoteMoveSound();
 
       currentTarget = Vector3.zero;
       targetSpace = 0;
@@ -836,7 +839,7 @@ public class PlayerMove : NetworkBehaviour
       route.Clear();
       moveSpeed = normalMoveSpeed;
       //AudioManager.Instance.StopAllSources();
-      RpcStopRemotePlayerMoveSound();
+      CmdStopRemotePlayerMoveSound();
       //spotLight.GetComponent<Light>().intensity = 4f;
       ToggleSpotLight(false);
       //pSetup.GetLocalPlayerIndicator().SetActive(true); ;
@@ -945,5 +948,20 @@ public class PlayerMove : NetworkBehaviour
    {
       spotLight.SetActive(state);
    }
+   #endregion
 
+   #region Server
+
+   [Command]
+   void CmdPlayerRemoteMoveSound()
+   {
+      RpcPlayerRemoteMoveSound();
+   }
+
+   [Command]
+   void CmdStopRemotePlayerMoveSound()
+   {
+      RpcStopRemotePlayerMoveSound();
+   }
+   #endregion
 }
