@@ -1118,7 +1118,7 @@ MonoBehaviour:
   targetGO: {fileID: 0}
   tweenTargetIsTargetGO: 1
   delay: 0
-  duration: 1
+  duration: 2
   easeType: 1
   easeCurve:
     serializedVersion: 2
@@ -7191,7 +7191,7 @@ Animator:
   m_GameObject: {fileID: 426429857}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 59f3712d479610841812dd538b333631, type: 3}
-  m_Controller: {fileID: 9100000, guid: 175599b4b584d3443bed7e3c81bc86b3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 71b9fbd8b196e7a4aa75c7702b44dbf4, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -9309,7 +9309,7 @@ MonoBehaviour:
   targetGO: {fileID: 0}
   tweenTargetIsTargetGO: 1
   delay: 0
-  duration: 1
+  duration: 2
   easeType: 1
   easeCurve:
     serializedVersion: 2
@@ -10196,7 +10196,7 @@ Animator:
   m_GameObject: {fileID: 570572049}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 59f3712d479610841812dd538b333631, type: 3}
-  m_Controller: {fileID: 9100000, guid: 175599b4b584d3443bed7e3c81bc86b3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 71b9fbd8b196e7a4aa75c7702b44dbf4, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -21658,7 +21658,7 @@ MonoBehaviour:
   targetGO: {fileID: 0}
   tweenTargetIsTargetGO: 1
   delay: 0
-  duration: 1
+  duration: 2
   easeType: 1
   easeCurve:
     serializedVersion: 2
@@ -21883,7 +21883,7 @@ MonoBehaviour:
   targetGO: {fileID: 0}
   tweenTargetIsTargetGO: 1
   delay: 0
-  duration: 1
+  duration: 2
   easeType: 1
   easeCurve:
     serializedVersion: 2
@@ -22044,7 +22044,7 @@ Animator:
   m_GameObject: {fileID: 773842168}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 59f3712d479610841812dd538b333631, type: 3}
-  m_Controller: {fileID: 9100000, guid: 175599b4b584d3443bed7e3c81bc86b3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 71b9fbd8b196e7a4aa75c7702b44dbf4, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -33390,7 +33390,7 @@ Animator:
   m_GameObject: {fileID: 1516980017}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 59f3712d479610841812dd538b333631, type: 3}
-  m_Controller: {fileID: 9100000, guid: 175599b4b584d3443bed7e3c81bc86b3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 71b9fbd8b196e7a4aa75c7702b44dbf4, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -41504,7 +41504,7 @@ Animator:
   m_GameObject: {fileID: 1714596298}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 59f3712d479610841812dd538b333631, type: 3}
-  m_Controller: {fileID: 9100000, guid: 175599b4b584d3443bed7e3c81bc86b3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 71b9fbd8b196e7a4aa75c7702b44dbf4, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -44133,7 +44133,7 @@ MonoBehaviour:
   targetGO: {fileID: 0}
   tweenTargetIsTargetGO: 1
   delay: 0
-  duration: 1
+  duration: 2
   easeType: 1
   easeCurve:
     serializedVersion: 2
@@ -57038,7 +57038,7 @@ Animator:
   m_GameObject: {fileID: 6689864880635967349}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 59f3712d479610841812dd538b333631, type: 3}
-  m_Controller: {fileID: 9100000, guid: 175599b4b584d3443bed7e3c81bc86b3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 71b9fbd8b196e7a4aa75c7702b44dbf4, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -67064,7 +67064,7 @@ MonoBehaviour:
   targetGO: {fileID: 0}
   tweenTargetIsTargetGO: 1
   delay: 0
-  duration: 1
+  duration: 2
   easeType: 1
   easeCurve:
     serializedVersion: 2
