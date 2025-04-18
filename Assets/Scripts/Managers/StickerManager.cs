@@ -8,22 +8,9 @@ public class StickerManager : NetworkBehaviour
 
    #endregion
 
-   #region Unity Callbacks
+   #region Mirror Callbacks
 
-   //void Awake() 
-   //{
-   //	
-   //}
-
-   //void Start() 
-   //{
-   //	
-   //}
-
-   //void Update() 
-   //{
-   //	
-   //}
+ 
    #endregion
 
 }

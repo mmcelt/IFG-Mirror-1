@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : SingletonMirror<UIManager>
+public class UIManager : Singleton<UIManager>
 {
    #region Fields & Properties
 
@@ -99,9 +99,9 @@ public class UIManager : SingletonMirror<UIManager>
 
    #endregion
 
-   #region Mirror Callbacks
+   #region Unity Callbacks
 
-   public override void OnStartAuthority()
+   void Start()
    {
       StartCoroutine(SetMyPlayersRoutine());
       Invoke(nameof(StartRemotePlayerUpdating), 0.5f);
