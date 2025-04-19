@@ -18,6 +18,7 @@ public class MyNetworkManager : NetworkManager
    [SerializeField] GameObject playerSpawnSystemPrefab;
    [SerializeField] GameObject gameManagerPrefab;
    [SerializeField] GameObject deckManagerPrefab;
+   [SerializeField] GameObject stickerManagerPrefab;
 
    public static Action OnClientConnected;
    public static Action OnClientDisconnected;
@@ -155,6 +156,9 @@ public class MyNetworkManager : NetworkManager
 
          GameObject gameManagerInstance=Instantiate(gameManagerPrefab);
          NetworkServer.Spawn(gameManagerInstance);
+
+         GameObject stickerManagerInstance = Instantiate(stickerManagerPrefab);
+         NetworkServer.Spawn(stickerManagerInstance);
       }
    }
 

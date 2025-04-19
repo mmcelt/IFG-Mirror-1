@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: -2559933228053063837}
   - component: {fileID: 7589185977870645227}
   - component: {fileID: 4619240525505828295}
-  - component: {fileID: 1891417764004315753}
   m_Layer: 0
   m_Name: Game Player
   m_TagString: Untagged
@@ -122,21 +121,11 @@ MonoBehaviour:
   tractor: 0
   harvester: 0
   otbCount: 0
---- !u!114 &1891417764004315753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972413898931645442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757badbc67148c4c8405529e831a967, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
+  hayCounter: 0
+  hayD: 0
+  cornD: 0
+  spudsD: 0
+  cowsI: 0
 --- !u!1001 &1392770914480980247
 PrefabInstance:
   m_ObjectHideFlags: 0

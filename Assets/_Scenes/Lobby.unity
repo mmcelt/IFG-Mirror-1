@@ -615,6 +615,8 @@ MonoBehaviour:
     type: 3}
   deckManagerPrefab: {fileID: 3194091531893701119, guid: 20206c56e825e34409d524770d48f9ae,
     type: 3}
+  stickerManagerPrefab: {fileID: 8934526291875937107, guid: a39790118383ccc4c8f583780eb2a3da,
+    type: 3}
   GameType: 0
   NetworthAmount: 0
   TimedLength: 0

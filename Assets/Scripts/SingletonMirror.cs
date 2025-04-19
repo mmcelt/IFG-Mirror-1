@@ -23,7 +23,7 @@ public class SingletonMirror<T> : NetworkBehaviour where T : NetworkBehaviour
          instance = this as T;
       else
       {
-         Destroy(gameObject);
+         //Destroy(gameObject);
       }
    }
    #endregion

@@ -1,8 +1,8 @@
-using Mirror;
 using UnityEngine;
+using Mirror;
 
-public class StickerManager : SingletonMirror<StickerManager>
-{	
+public class TestManager : SingletonMirror<TestManager>
+{
    #region Fields & Properties
 
 
@@ -10,7 +10,7 @@ public class StickerManager : SingletonMirror<StickerManager>
 
    #region Mirror Callbacks
 
- 
+
    #endregion
 
 }
