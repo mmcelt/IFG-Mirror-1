@@ -21867,9 +21867,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8b35bf32312e94583c062726d41e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
   playerNameText: {fileID: 7026715975943971707}
   farmerNameText: {fileID: 7026715975701453959}
   badNews:
@@ -21916,14 +21913,14 @@ MonoBehaviour:
   spudsImage: {fileID: 1827836786288892224}
   fCowImage: {fileID: 4835025884451577563}
   rCowImage: {fileID: 5624062727574960589}
-  hayNSprite: {fileID: 21300000, guid: fd48563bd58bc244498785da845a61de, type: 3}
-  hayDSprite: {fileID: 21300000, guid: 98a7cb58a9e56dd48ac3d474fce754ac, type: 3}
-  grainNSprite: {fileID: 21300000, guid: 18491f28400bcb145904fc2eee818ef7, type: 3}
-  grainDSprite: {fileID: 21300000, guid: fb96b3d88693bd645966c41ffa94d28e, type: 3}
-  spudsNSprite: {fileID: 21300000, guid: 15adc06420bbd714b8cf8e3922d5c56b, type: 3}
-  spudsDSprite: {fileID: 21300000, guid: 0e1ab4f561cef2b41872c4f45bf1f1e6, type: 3}
-  cowNSprite: {fileID: 21300000, guid: fead7021758ca854db60040a59719d87, type: 3}
-  cowDSprite: {fileID: 21300000, guid: 4a5cf188a1e831145a0d72fb85f8f9de, type: 3}
+  hayNSprite: {fileID: 21300000, guid: d54202e43d7457b4e84fa3df708305e9, type: 3}
+  hayDSprite: {fileID: 21300000, guid: 8bd932df5dea07a46a06005f215bced4, type: 3}
+  grainNSprite: {fileID: 21300000, guid: e21999ae6b7fc99459f41daa71649aa3, type: 3}
+  grainDSprite: {fileID: 21300000, guid: b4f980de6bf3f6e4897285bf433a6af0, type: 3}
+  spudsNSprite: {fileID: 21300000, guid: fcf7cd0d3d5872e43bd1eb168bc117ae, type: 3}
+  spudsDSprite: {fileID: 21300000, guid: e0d2bb8fa765d7e4db977ba92cd9cc82, type: 3}
+  cowNSprite: {fileID: 21300000, guid: c96ce04ff2a129d40a9c69726a9d8990, type: 3}
+  cowDSprite: {fileID: 21300000, guid: adb11fee42ae16949aa3923d699d4344, type: 3}
   hayText: {fileID: 5858169173373327711}
   grainText: {fileID: 9031166827887944185}
   fruitText: {fileID: 3886569916987085179}

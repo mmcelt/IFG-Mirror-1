@@ -14,9 +14,9 @@ public class PlayerManager : NetworkBehaviour
    [SerializeField] int notes;
    [SyncVar]
    [SerializeField] int networth;
-   [SyncVar]
+   [SyncVar(hook = nameof(HandleHayUpdated))]
    [SerializeField] int hay;
-   [SyncVar]
+   [SyncVar(hook = nameof(HandleGrainUpdated))]
    [SerializeField] int grain;
    [SyncVar]
    [SerializeField] int fruit;
@@ -33,8 +33,13 @@ public class PlayerManager : NetworkBehaviour
    [SyncVar(hook = nameof(HandleOtbCountUpdated))]
    [SerializeField] int otbCount;
 
-   bool initialCards = true;
+   public int hayCounter;
+   public bool hayD, cornD, spudsD, cowsI;
 
+
+
+
+   bool initialCards = true;
    List<OTBCard> myOTBs = new List<OTBCard>();
 
    #endregion
@@ -54,6 +59,24 @@ public class PlayerManager : NetworkBehaviour
       Debug.Log("In GMHAG");
       UpdateMyHay(10);
       UpdateMyGrain(10);
+   }
+
+   void HandleHayUpdated(int oldValue, int newValue)
+   {
+      //place sticker
+
+      //update UI
+      UIManager.Instance.UpdateMyCommodityAmounts(hayCounter, hay, grain, fruit, spuds, fCows, rCows);
+      UIManager.Instance.UpdateCommodityStickers(hayD, cornD, spudsD, cowsI);
+   }
+
+   void HandleGrainUpdated(int oldValue, int newValue)
+   {
+      //place sticker
+
+      //update UI
+      UIManager.Instance.UpdateMyCommodityAmounts(hayCounter, hay, grain, fruit, spuds, fCows, rCows);
+      UIManager.Instance.UpdateCommodityStickers(hayD, cornD, spudsD, cowsI);
    }
 
    void HandleOtbCountUpdated(int oldValue, int newValue)
