@@ -30,7 +30,7 @@ public class PlayerManager : NetworkBehaviour
    [SerializeField] bool tractor;
    [SyncVar]
    [SerializeField] bool harvester;
-   [SyncVar(hook = nameof(HandleOtbCountChanged))]
+   [SyncVar(hook = nameof(HandleOtbCountUpdated))]
    [SerializeField] int otbCount;
 
    bool initialCards = true;
@@ -41,12 +41,22 @@ public class PlayerManager : NetworkBehaviour
 
    #region Mirror Callbacks
 
-
+   public override void OnStartAuthority()
+   {
+      Invoke(nameof(GetMyHayAndGrain), 0.5f);
+   }
    #endregion
 
    #region Client
 
-   void HandleOtbCountChanged(int oldValue, int newValue)
+   void GetMyHayAndGrain()
+   {
+      Debug.Log("In GMHAG");
+      UpdateMyHay(10);
+      UpdateMyGrain(10);
+   }
+
+   void HandleOtbCountUpdated(int oldValue, int newValue)
    {
       UIManager.Instance.UpdateMyOtbCountText(otbCount);
    }
