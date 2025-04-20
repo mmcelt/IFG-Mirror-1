@@ -54,7 +54,7 @@ MonoBehaviour:
   mikFruit: {x: 30.7, y: 0, z: -0.5}
   mikSpuds: {x: 38.7, y: 0, z: -0.5}
   mikFarmCows: {x: 46.7, y: 0, z: -0.5}
-  oxfordRange: {x: 0, y: 0, z: 0}
-  targheeRange: {x: 0, y: 0, z: 0}
-  lostRiverRange: {x: 0, y: 0, z: 0}
-  lemhiRange: {x: 0, y: 0, z: 0}
+  oxfordRange: {x: -31, y: 0, z: 46}
+  targheeRange: {x: 24, y: 0, z: 46}
+  lostRiverRange: {x: -45, y: 0, z: 7}
+  lemhiRange: {x: 19, y: 0, z: -44}
