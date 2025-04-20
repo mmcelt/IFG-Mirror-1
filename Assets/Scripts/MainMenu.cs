@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using Mirror;
 
 public class MainMenu : MonoBehaviour
 {

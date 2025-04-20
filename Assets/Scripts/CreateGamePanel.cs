@@ -112,4 +112,9 @@ public class CreateGamePanel : MonoBehaviour
       gameObject.SetActive(false);
       Room.StartHost();
    }
+
+   public void OnBackButtonClick()
+   {
+      Room.StopHost();
+   }
 }
