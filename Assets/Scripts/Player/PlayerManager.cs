@@ -37,8 +37,6 @@ public class PlayerManager : NetworkBehaviour
    public bool hayD, cornD, spudsD, cowsI;
 
 
-
-
    bool initialCards = true;
    List<OTBCard> myOTBs = new List<OTBCard>();
 
@@ -64,7 +62,7 @@ public class PlayerManager : NetworkBehaviour
    void HandleHayUpdated(int oldValue, int newValue)
    {
       //place sticker
-
+      CmdPlaceSticker(player.GetFarmerName(), IFG.HAY, hay, hayD);
       //update UI
       UIManager.Instance.UpdateMyCommodityAmounts(hayCounter, hay, grain, fruit, spuds, fCows, rCows);
       UIManager.Instance.UpdateCommodityStickers(hayD, cornD, spudsD, cowsI);
@@ -73,7 +71,7 @@ public class PlayerManager : NetworkBehaviour
    void HandleGrainUpdated(int oldValue, int newValue)
    {
       //place sticker
-
+      CmdPlaceSticker(player.GetFarmerName(), IFG.GRAIN, grain, cornD);
       //update UI
       UIManager.Instance.UpdateMyCommodityAmounts(hayCounter, hay, grain, fruit, spuds, fCows, rCows);
       UIManager.Instance.UpdateCommodityStickers(hayD, cornD, spudsD, cowsI);
@@ -163,7 +161,7 @@ public class PlayerManager : NetworkBehaviour
    {
       return fCows;
    }
- 
+
    public void UpdateMyRangeCows(int amount)
    {
       CmdUpdateMyRangeCows(amount);
@@ -176,7 +174,7 @@ public class PlayerManager : NetworkBehaviour
 
    public void UpdateMyTractor(bool owned)
    {
-      CmdUpdateMyTractor(owned); 
+      CmdUpdateMyTractor(owned);
    }
 
    public bool GetMyTractor()
@@ -299,6 +297,13 @@ public class PlayerManager : NetworkBehaviour
    {
       DeckManager.Instance.DrawOTBCard(gameObject);
    }
+
+   [Command]
+   void CmdPlaceSticker(string farmer, string type, int amount, bool doubled)
+   {
+      StickerManager.Instance.PlaceBoardSticker(farmer, type, amount, doubled);
+   }
+
    #endregion
 }
 

@@ -65,6 +65,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
+  stickerLocations: {fileID: 11400000, guid: 54ac69547a0d97a458ae11e4e0a889a3, type: 2}
   commodityStickers:
   - {fileID: 3231864813474816314, guid: 42b552daf01af67439da3e7734d3422b, type: 3}
   - {fileID: 13700924067179846, guid: 5aa0e2391ea8eb64f9f66295da8d60d9, type: 3}

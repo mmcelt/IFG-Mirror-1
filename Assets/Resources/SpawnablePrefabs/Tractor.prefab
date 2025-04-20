@@ -650,7 +650,6 @@ GameObject:
   - component: {fileID: 3286316135621803585}
   - component: {fileID: 3643596631118137099}
   - component: {fileID: 6262455482423362493}
-  - component: {fileID: -7461066171972701340}
   - component: {fileID: 2346110248332881618}
   m_Layer: 0
   m_Name: Tractor
@@ -794,39 +793,6 @@ MonoBehaviour:
   myPlayer: {fileID: 0}
   pSetup: {fileID: 0}
   pManager: {fileID: 0}
---- !u!114 &-7461066171972701340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4999794094966535909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841169d3e63dd39489c18ac65ab57f56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
-  player: {fileID: 0}
-  cash: 0
-  notes: 0
-  networth: 0
-  hay: 0
-  grain: 0
-  fruit: 0
-  spuds: 0
-  fCows: 0
-  rCows: 0
-  tractor: 0
-  harvester: 0
-  otbCount: 0
-  hayCounter: 0
-  hayD: 0
-  cornD: 0
-  spudsD: 0
-  cowsI: 0
 --- !u!114 &2346110248332881618
 MonoBehaviour:
   m_ObjectHideFlags: 0
