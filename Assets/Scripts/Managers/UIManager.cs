@@ -128,7 +128,7 @@ public class UIManager : Singleton<UIManager>
       myPlayer = GetComponentInParent<GamePlayer>();
       pManager = myPlayer.GetComponent<PlayerManager>();
       myTractor = myPlayer.GetMyTractor();
-      Debug.Log($"My Trctor: {myTractor}");
+      //Debug.Log($"My Trctor: {myTractor}");
       pMove = myTractor.GetComponent<PlayerMove>();
    }
 
@@ -361,17 +361,17 @@ public class UIManager : Singleton<UIManager>
 
    public void UpdateMyCashText(int amount)
    {
-      playerCashText.text = amount.ToString();
+      playerCashText.text = amount.ToString("c0");
    }
 
    public void UpdateMyNotesText(int amount)
    {
-      playerNotesText.text = amount.ToString();
+      playerNotesText.text = amount.ToString("c0");
    }
 
    public void UpdateMyNetworthText(int amount)
    {
-      playerNetworthText.text = amount.ToString();
+      playerNetworthText.text = amount.ToString("c0");
    }
 
    public void UpdateHarvester(bool harvester)

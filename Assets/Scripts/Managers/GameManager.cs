@@ -65,7 +65,7 @@ public class GameManager : SingletonMirror<GameManager>
       {
          foreach (var player in Room.GamePlayers)
          {
-            Debug.Log($"In Give OTB's: {player.name}");
+            //Debug.Log($"In Give OTB's: {player.name}");
             DeckManager.Instance.DrawOTBCard(player.gameObject);
          }
       }
