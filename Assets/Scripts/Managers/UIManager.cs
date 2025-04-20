@@ -126,9 +126,11 @@ public class UIManager : Singleton<UIManager>
    {
       yield return new WaitForSeconds(0.35f);
       myPlayer = GetComponentInParent<GamePlayer>();
+      Debug.Log($"My GP: {myPlayer}");
       pManager = myPlayer.GetComponent<PlayerManager>();
+      yield return new WaitWhile(() => myPlayer.GetMyTractor() == null);
       myTractor = myPlayer.GetMyTractor();
-      //Debug.Log($"My Trctor: {myTractor}");
+      Debug.Log($"My Trctor: {myTractor}");
       pMove = myTractor.GetComponent<PlayerMove>();
    }
 
